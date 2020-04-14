@@ -1,7 +1,7 @@
 # LIST OBJECT INTERFACE #
 
 class ListInterface:
-    def add(self, element) -> None:
+    def add(self, element) -> int:
         # this will add the element at the end of list
         pass
     
@@ -21,19 +21,19 @@ class ListInterface:
         # given the index find the value of the element
         pass
     
-    def remove(self, index) -> bool:
+    def removePosition(self, index) -> bool:
         # deletes the element on the given index
         pass
     
-    def remove(self, value) -> bool:
-        # deletes the element on the given index
+    def removeValue(self, value) -> bool:
+        # deletes the element on the given value
         pass
     
-    def isMember(self, element) -> bool:
+    def isMember(self, value) -> bool:
         # tell you if the element belongs to that list
         pass
     
-    def replace(self, index, element) -> None:
+    def replace(self, index, value) -> None:
         # replaces the value on the given position
         pass
     
