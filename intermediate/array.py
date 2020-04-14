@@ -62,8 +62,13 @@ class myArray:
 if __name__ == "__main__":
     data = [10,2.5,3,4,5]  #TODO data must be given by user# 
     myList = myArray(data)
-    tut.hideturtle()
+    
+    animation = False
+
+    if not animation:
+        tut.tracer(0, 0)
     
     myList.printElements()
     myList.draw()
+    tut.update()
     tut.exitonclick()
