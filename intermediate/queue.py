@@ -26,7 +26,7 @@ class Queue:
 
     def dequeue(self) -> bool:
         try:
-            self._queue.pop()
+            self._queue.remove(self.front())
             return True
         except:
             return False
@@ -60,21 +60,29 @@ class Queue:
                 w += (len(str(self._queue[i])) - 1) * 3
                 
             #tracing square, ending at top left corner of current square facing left
+            
             pen.right(90)
             pen.forward(h)
             pen.left(90)
             pen.forward(w)
-            pen.left(90)
-            pen.forward(h)
+            if i != self.getSize()-1:  
+                pen.left(90)
+                pen.forward(h)
+            else:
+                pen.penup()
+                pen.left(90)
+                pen.forward(w)
+                pen.down()
             pen.left(90)
             pen.forward(w)
+            
             
             #drawing data into square
             pen.penup()
             pen.backward(w/2)
             pen.left(90)
             pen.forward(h/2 + 5)
-            pen.write(str(self._queue[i]), False, align='center')
+            pen.write(str(self._queue[i]), False, align='center', font=['Arial', 8, 'bold'])
             pen.backward(h/2 + 5)
             pen.right(90)
             pen.forward(w/2)
@@ -91,19 +99,13 @@ if __name__ == "__main__":
     myQueue = Queue()
     for i in data:
         myQueue.enqueue(i)
+        tut.clearscreen()
+        myQueue.draw()
 
-    animation = False
+    animation = True
     
     if not animation:
         tut.tracer(0, 0)
     
-    myQueue.draw()
-
     tut.update()
     tut.exitonclick()
-
-
-
-
-
-

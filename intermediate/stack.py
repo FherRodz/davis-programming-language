@@ -86,19 +86,19 @@ if __name__ == "__main__":
     data = [1, 2, 3, 4, 5]
     
     myStack = myStack()
-    print("The stack should be empty and returned "+str(myStack.isEmpty())+" and shouldve returned True \n")
+    # print("The stack should be empty and returned "+str(myStack.isEmpty())+" and shouldve returned True \n")
     for i in data:
         myStack.push(i)
         tut.clearscreen()
         myStack.draw()
-    print("Stack after added numbers 1 through 5: \n size: "+str(myStack.size()))    
-    myStack.printStack()
-    print("Stack after popping "+str(myStack.pop()) +
-          " from the stack: \n size: "+str(myStack.size()))
-    myStack.printStack()
-    print("Stack after popping "+str(myStack.pop()) +
-          " from the stack: \n size: "+str(myStack.size()))
-    myStack.printStack()
+    # print("Stack after added numbers 1 through 5: \n size: "+str(myStack.size()))    
+    #myStack.printStack()
+    #print("Stack after popping "+str(myStack.pop()) +
+          #" from the stack: \n size: "+str(myStack.size()))
+    #myStack.printStack()
+    #print("Stack after popping "+str(myStack.pop()) +
+          #" from the stack: \n size: "+str(myStack.size()))
+    #myStack.printStack()
     
     tut.exitonclick()
     
