@@ -2,32 +2,15 @@ from ply import lex as lex
 import sys
 
 tokens = [
-    'Character', 'Digit', 'LParentesis', 'RParentesis',
-    'LBracket', 'RBracket', 'LCurlyBrace', 'RCurlyBrace',
-    'Comma', 'Colon',
+    'Character', 'Digit', 'LParenthesis', 'RParenthesis',
+    'LBracket', 'RBracket','Comma', 'Colon',
     'Dot', 'Apostrophe', 'Equals',
-    'LessThan', 'GreaterThan', 'Or', 'And', 'Exp', 'Type',
+    'LessThan', 'GreaterThan', 'Or',
 ]
 
 reservedWords = {
-        'def' : 'DEF',
-        'canvas' : 'CANVAS',
-        'dimensions' : 'DIMENSIONS',
-        'backgroundColor' : 'BGCOLOR',
-        'draggable' : 'DRAGGABLE',
-        'position' : 'POSITION',
-        'structure' : 'STRUCTURE',
-        'struct' : 'STRUCT',
-        'data' : 'DATA',
-        'draw' : 'DRAW',
-        'object' : 'OBJ',
-        'stroke' : 'STROKE',
-        'strokeColor' : 'STROKECOLOR',
-        'true' : 'TRUE',
-        'false' : 'FALSE',
-        'type': 'TYPE',
-        'intParam' : 'INT',
-        'arrayParam' : 'ARR',
+        'true' : 'true',
+        'false' : 'false',
         'stack' : 'STACK',
         'queue' : 'QUEUE',
         'arrayStructure' : 'ARRAY',
@@ -39,12 +22,10 @@ reservedWords = {
 
 tokens += list(reservedWords.values())
 
-t_LParentesis = r'\('
-t_RParentesis = r'\)'
+t_LParenthesis = r'\('
+t_RParenthesis = r'\)'
 t_LBracket = r'\['
 t_RBracket = r'\]'
-t_LCurlyBrace = r'\{'
-t_RCurlyBrace =  r'\}'
 t_Colon  = r'\:'
 t_Comma = r'\,'
 t_Dot = r'\.'
@@ -52,15 +33,13 @@ t_Apostrophe = r'\''
 t_Equals = r'\='
 t_LessThan = r'\<'
 t_GreaterThan = r'\>'
-t_And = r'\&'
-t_Or = r'\|'
 t_Character = r'[a-zA-Z\_]'
 t_Digit = r'[0-9]'
 
 t_ignore  = ' \t'
 
 def t_RESERVED(t):
-    r'def | canvas | dimensions | backgroundColor | draggable | position | structure | struct | data | draw | object | stroke | strokeColor | true | false | type | intParameter | arrayParameter | structureClass | stack | queue | arrayStructure | doublyLinkedList'
+    r'true | false | stack | queue | arrayStructure | doublyLinkedList | binarySearchTree | number | id'
     if t.value in reservedWords:
         t.type = reservedWords[t.value]
     return t
@@ -94,7 +73,6 @@ def draw(
 ) '''
 
 lexer = lex.lex()
-
 lexer.input(test)
 
 
