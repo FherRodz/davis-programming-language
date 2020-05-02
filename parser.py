@@ -10,44 +10,50 @@ logging.basicConfig(
 )
 
 
-### PARSER###
+###PARSER###
 
-def p_EXP(p):
-    '''
-        Exp : Character
-            | Character Exp
-    '''
-def p_Def(p):
-    '''
-        Def : Exp
-    '''
-def p_Bool(p):
-    '''
-        Bool : true
-             | false
-    '''
+def p_Func(p):
+    """
+
+        Func : DEF CANVAS Canvas
+             | DEF STRUCTURES Structure
+             | DEF DRAW Draw
+    """
+
+# def p_Def(p):
+#     '''
+#         Def : Exp
+#     '''
+# def p_Bool(p):
+#     '''
+#         Bool : true
+#              | false
+#     '''
 def p_Canvas(p):
     '''
-        Canvas : LParenthesis Dimensions Bgcolor Draggable Position RParenthesis
+        Canvas : LParenthesis Dimensions BgColor Position RParenthesis
     '''
 
-
-def p_Draggable(p):
-    '''
-        Draggable : Bool
-
-    '''
 def p_Dimensions(p):
     '''
-        Dimensions : Colon LessThan Int Comma Int GreaterThan
+        Dimensions : DIMENSIONS Colon LessThan Int Comma Int GreaterThan
     '''
-def p_Bgcolor(p):
+def p_BgColor(p):
     '''
-        Bgcolor : Colon Exp Dot Exp
+        BgColor : BGCOLOR Colon Color
     '''
+def p_Color(p):
+    """
+        Color : BLACK
+              | BLUE
+              | YELLOW
+              | RED
+              | GREEN
+              | WHITE
+    """
 def p_Position(p):
     '''
-        Position : Dimensions
+        Position : POSITION Colon LessThan Int Comma Int GreaterThan
     '''
 def p_Structure (p):
     '''
@@ -56,43 +62,50 @@ def p_Structure (p):
 
 def p_Struct(p):
     '''
-        Struct : Bgcolor
+        Struct : STRUCT Colon DS
     '''
+def p_DS(p):
+    """
+        DS : QUEUE
+           | STACK
+           | ARRAY
+           | DLL
+           | BST
+    """
 def p_Data(p):
     '''
-        Data : Colon LessThan Type Comma Arr GreaterThan
+        Data : DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan
     '''
 
 def p_Type(p):
     '''
-        Type : Equals Apostrophe Exp Apostrophe
+        Type : INT
     '''
 def p_Arr(p):
     '''
-    Arr : Equals LBracket Int Comma RBracket
-        | Equals LBracket Arr RBracket
+    Arr : Int
+        | Arr Comma Int
     '''
 def p_Draw(p):
     '''
-    Draw : LParenthesis Obj Stroke Strokecolor RParenthesis
+    Draw : LParenthesis PenSize PenColor RParenthesis
     '''
-def p_Obj(p):
+# def p_Obj(p):
+#     '''
+#     Obj : OBJ Colon Exp
+#     '''
+def p_PenSize(p):
     '''
-    Obj : Colon Exp
+    PenSize : PENSIZE Colon Int PX
     '''
-def p_Stroke(p):
+def p_PenColor(p):
     '''
-    Stroke : Colon Int
-           | Stroke Exp
-    '''
-def p_Strokecolor(p):
-    '''
-    Strokecolor : Colon Bgcolor
+    PenColor : PENCOLOR Colon Color
     '''
 def p_Int(p):
     '''
     Int : Digit
-        | Digit Int
+        | Int Digit
     '''
 
 def p_error(p):
