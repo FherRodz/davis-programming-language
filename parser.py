@@ -15,9 +15,7 @@ logging.basicConfig(
 def p_Func(p):
     """
 
-        Func : DEF CANVAS Canvas
-             | DEF STRUCTURES Structure
-             | DEF DRAW Draw
+        Func : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw
     """
 
 # def p_Def(p):
@@ -105,7 +103,7 @@ def p_PenColor(p):
 def p_Int(p):
     '''
     Int : Digit
-        | Int Digit
+        | Digit Int
     '''
 
 def p_error(p):
