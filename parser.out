@@ -8,102 +8,98 @@ Unused terminals:
 Grammar
 
 Rule 0     S' -> Func
-Rule 1     Func -> DEF CANVAS Canvas
-Rule 2     Func -> DEF STRUCTURES Structure
-Rule 3     Func -> DEF DRAW Draw
-Rule 4     Canvas -> LParenthesis Dimensions BgColor Position RParenthesis
-Rule 5     Dimensions -> DIMENSIONS Colon LessThan Int Comma Int GreaterThan
-Rule 6     BgColor -> BGCOLOR Colon Color
-Rule 7     Color -> BLACK
-Rule 8     Color -> BLUE
-Rule 9     Color -> YELLOW
-Rule 10    Color -> RED
-Rule 11    Color -> GREEN
-Rule 12    Color -> WHITE
-Rule 13    Position -> POSITION Colon LessThan Int Comma Int GreaterThan
-Rule 14    Structure -> LParenthesis Struct Data RParenthesis
-Rule 15    Struct -> STRUCT Colon DS
-Rule 16    DS -> QUEUE
-Rule 17    DS -> STACK
-Rule 18    DS -> ARRAY
-Rule 19    DS -> DLL
-Rule 20    DS -> BST
-Rule 21    Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan
-Rule 22    Type -> INT
-Rule 23    Arr -> Int
-Rule 24    Arr -> Arr Comma Int
-Rule 25    Draw -> LParenthesis PenSize PenColor RParenthesis
-Rule 26    PenSize -> PENSIZE Colon Int PX
-Rule 27    PenColor -> PENCOLOR Colon Color
-Rule 28    Int -> Digit
-Rule 29    Int -> Int Digit
+Rule 1     Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw
+Rule 2     Canvas -> LParenthesis Dimensions BgColor Position RParenthesis
+Rule 3     Dimensions -> DIMENSIONS Colon LessThan Int Comma Int GreaterThan
+Rule 4     BgColor -> BGCOLOR Colon Color
+Rule 5     Color -> BLACK
+Rule 6     Color -> BLUE
+Rule 7     Color -> YELLOW
+Rule 8     Color -> RED
+Rule 9     Color -> GREEN
+Rule 10    Color -> WHITE
+Rule 11    Position -> POSITION Colon LessThan Int Comma Int GreaterThan
+Rule 12    Structure -> LParenthesis Struct Data RParenthesis
+Rule 13    Struct -> STRUCT Colon DS
+Rule 14    DS -> QUEUE
+Rule 15    DS -> STACK
+Rule 16    DS -> ARRAY
+Rule 17    DS -> DLL
+Rule 18    DS -> BST
+Rule 19    Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan
+Rule 20    Type -> INT
+Rule 21    Arr -> Int
+Rule 22    Arr -> Arr Comma Int
+Rule 23    Draw -> LParenthesis PenSize PenColor RParenthesis
+Rule 24    PenSize -> PENSIZE Colon Int PX
+Rule 25    PenColor -> PENCOLOR Colon Color
+Rule 26    Int -> Digit
+Rule 27    Int -> Digit Int
 
 Terminals, with rules where they appear
 
-ARRAY                : 18
-BGCOLOR              : 6
-BLACK                : 7
-BLUE                 : 8
-BST                  : 20
+ARRAY                : 16
+BGCOLOR              : 4
+BLACK                : 5
+BLUE                 : 6
+BST                  : 18
 CANVAS               : 1
-Colon                : 5 6 13 15 21 26 27
-Comma                : 5 13 21 24
-DATA                 : 21
-DEF                  : 1 2 3
-DIMENSIONS           : 5
-DLL                  : 19
-DRAW                 : 3
-Digit                : 28 29
-GREEN                : 11
-GreaterThan          : 5 13 21
-INT                  : 22
-LBracket             : 21
-LParenthesis         : 4 14 25
-LessThan             : 5 13 21
-PENCOLOR             : 27
-PENSIZE              : 26
-POSITION             : 13
-PX                   : 26
-QUEUE                : 16
-RBracket             : 21
-RED                  : 10
-RParenthesis         : 4 14 25
-STACK                : 17
-STRUCT               : 15
-STRUCTURES           : 2
-WHITE                : 12
-YELLOW               : 9
+Colon                : 3 4 11 13 19 24 25
+Comma                : 3 11 19 22
+DATA                 : 19
+DEF                  : 1 1 1
+DIMENSIONS           : 3
+DLL                  : 17
+DRAW                 : 1
+Digit                : 26 27
+GREEN                : 9
+GreaterThan          : 3 11 19
+INT                  : 20
+LBracket             : 19
+LParenthesis         : 2 12 23
+LessThan             : 3 11 19
+PENCOLOR             : 25
+PENSIZE              : 24
+POSITION             : 11
+PX                   : 24
+QUEUE                : 14
+RBracket             : 19
+RED                  : 8
+RParenthesis         : 2 12 23
+STACK                : 15
+STRUCT               : 13
+STRUCTURES           : 1
+WHITE                : 10
+YELLOW               : 7
 error                : 
 false                : 
 true                 : 
 
 Nonterminals, with rules where they appear
 
-Arr                  : 21 24
-BgColor              : 4
+Arr                  : 19 22
+BgColor              : 2
 Canvas               : 1
-Color                : 6 27
-DS                   : 15
-Data                 : 14
-Dimensions           : 4
-Draw                 : 3
+Color                : 4 25
+DS                   : 13
+Data                 : 12
+Dimensions           : 2
+Draw                 : 1
 Func                 : 0
-Int                  : 5 5 13 13 23 24 26 29
-PenColor             : 25
-PenSize              : 25
-Position             : 4
-Struct               : 14
-Structure            : 2
-Type                 : 21
+Int                  : 3 3 11 11 21 22 24 27
+PenColor             : 23
+PenSize              : 23
+Position             : 2
+Struct               : 12
+Structure            : 1
+Type                 : 19
 
 Parsing method: LALR
 
 state 0
 
     (0) S' -> . Func
-    (1) Func -> . DEF CANVAS Canvas
-    (2) Func -> . DEF STRUCTURES Structure
-    (3) Func -> . DEF DRAW Draw
+    (1) Func -> . DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw
 
     DEF             shift and go to state 2
 
@@ -117,627 +113,626 @@ state 1
 
 state 2
 
-    (1) Func -> DEF . CANVAS Canvas
-    (2) Func -> DEF . STRUCTURES Structure
-    (3) Func -> DEF . DRAW Draw
+    (1) Func -> DEF . CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw
 
     CANVAS          shift and go to state 3
-    STRUCTURES      shift and go to state 4
-    DRAW            shift and go to state 5
 
 
 state 3
 
-    (1) Func -> DEF CANVAS . Canvas
-    (4) Canvas -> . LParenthesis Dimensions BgColor Position RParenthesis
+    (1) Func -> DEF CANVAS . Canvas DEF STRUCTURES Structure DEF DRAW Draw
+    (2) Canvas -> . LParenthesis Dimensions BgColor Position RParenthesis
 
-    LParenthesis    shift and go to state 7
+    LParenthesis    shift and go to state 5
 
-    Canvas                         shift and go to state 6
+    Canvas                         shift and go to state 4
 
 state 4
 
-    (2) Func -> DEF STRUCTURES . Structure
-    (14) Structure -> . LParenthesis Struct Data RParenthesis
+    (1) Func -> DEF CANVAS Canvas . DEF STRUCTURES Structure DEF DRAW Draw
 
-    LParenthesis    shift and go to state 9
+    DEF             shift and go to state 6
 
-    Structure                      shift and go to state 8
 
 state 5
 
-    (3) Func -> DEF DRAW . Draw
-    (25) Draw -> . LParenthesis PenSize PenColor RParenthesis
+    (2) Canvas -> LParenthesis . Dimensions BgColor Position RParenthesis
+    (3) Dimensions -> . DIMENSIONS Colon LessThan Int Comma Int GreaterThan
 
-    LParenthesis    shift and go to state 11
+    DIMENSIONS      shift and go to state 8
 
-    Draw                           shift and go to state 10
+    Dimensions                     shift and go to state 7
 
 state 6
 
-    (1) Func -> DEF CANVAS Canvas .
+    (1) Func -> DEF CANVAS Canvas DEF . STRUCTURES Structure DEF DRAW Draw
 
-    $end            reduce using rule 1 (Func -> DEF CANVAS Canvas .)
+    STRUCTURES      shift and go to state 9
 
 
 state 7
 
-    (4) Canvas -> LParenthesis . Dimensions BgColor Position RParenthesis
-    (5) Dimensions -> . DIMENSIONS Colon LessThan Int Comma Int GreaterThan
+    (2) Canvas -> LParenthesis Dimensions . BgColor Position RParenthesis
+    (4) BgColor -> . BGCOLOR Colon Color
 
-    DIMENSIONS      shift and go to state 13
+    BGCOLOR         shift and go to state 11
 
-    Dimensions                     shift and go to state 12
+    BgColor                        shift and go to state 10
 
 state 8
 
-    (2) Func -> DEF STRUCTURES Structure .
+    (3) Dimensions -> DIMENSIONS . Colon LessThan Int Comma Int GreaterThan
 
-    $end            reduce using rule 2 (Func -> DEF STRUCTURES Structure .)
+    Colon           shift and go to state 12
 
 
 state 9
 
-    (14) Structure -> LParenthesis . Struct Data RParenthesis
-    (15) Struct -> . STRUCT Colon DS
+    (1) Func -> DEF CANVAS Canvas DEF STRUCTURES . Structure DEF DRAW Draw
+    (12) Structure -> . LParenthesis Struct Data RParenthesis
 
-    STRUCT          shift and go to state 15
+    LParenthesis    shift and go to state 14
 
-    Struct                         shift and go to state 14
+    Structure                      shift and go to state 13
 
 state 10
 
-    (3) Func -> DEF DRAW Draw .
+    (2) Canvas -> LParenthesis Dimensions BgColor . Position RParenthesis
+    (11) Position -> . POSITION Colon LessThan Int Comma Int GreaterThan
 
-    $end            reduce using rule 3 (Func -> DEF DRAW Draw .)
+    POSITION        shift and go to state 16
 
+    Position                       shift and go to state 15
 
 state 11
 
-    (25) Draw -> LParenthesis . PenSize PenColor RParenthesis
-    (26) PenSize -> . PENSIZE Colon Int PX
+    (4) BgColor -> BGCOLOR . Colon Color
 
-    PENSIZE         shift and go to state 17
+    Colon           shift and go to state 17
 
-    PenSize                        shift and go to state 16
 
 state 12
 
-    (4) Canvas -> LParenthesis Dimensions . BgColor Position RParenthesis
-    (6) BgColor -> . BGCOLOR Colon Color
+    (3) Dimensions -> DIMENSIONS Colon . LessThan Int Comma Int GreaterThan
 
-    BGCOLOR         shift and go to state 19
+    LessThan        shift and go to state 18
 
-    BgColor                        shift and go to state 18
 
 state 13
 
-    (5) Dimensions -> DIMENSIONS . Colon LessThan Int Comma Int GreaterThan
+    (1) Func -> DEF CANVAS Canvas DEF STRUCTURES Structure . DEF DRAW Draw
 
-    Colon           shift and go to state 20
+    DEF             shift and go to state 19
 
 
 state 14
 
-    (14) Structure -> LParenthesis Struct . Data RParenthesis
-    (21) Data -> . DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan
+    (12) Structure -> LParenthesis . Struct Data RParenthesis
+    (13) Struct -> . STRUCT Colon DS
 
-    DATA            shift and go to state 22
+    STRUCT          shift and go to state 21
 
-    Data                           shift and go to state 21
+    Struct                         shift and go to state 20
 
 state 15
 
-    (15) Struct -> STRUCT . Colon DS
+    (2) Canvas -> LParenthesis Dimensions BgColor Position . RParenthesis
 
-    Colon           shift and go to state 23
+    RParenthesis    shift and go to state 22
 
 
 state 16
 
-    (25) Draw -> LParenthesis PenSize . PenColor RParenthesis
-    (27) PenColor -> . PENCOLOR Colon Color
+    (11) Position -> POSITION . Colon LessThan Int Comma Int GreaterThan
 
-    PENCOLOR        shift and go to state 25
+    Colon           shift and go to state 23
 
-    PenColor                       shift and go to state 24
 
 state 17
 
-    (26) PenSize -> PENSIZE . Colon Int PX
+    (4) BgColor -> BGCOLOR Colon . Color
+    (5) Color -> . BLACK
+    (6) Color -> . BLUE
+    (7) Color -> . YELLOW
+    (8) Color -> . RED
+    (9) Color -> . GREEN
+    (10) Color -> . WHITE
 
-    Colon           shift and go to state 26
+    BLACK           shift and go to state 25
+    BLUE            shift and go to state 26
+    YELLOW          shift and go to state 27
+    RED             shift and go to state 28
+    GREEN           shift and go to state 29
+    WHITE           shift and go to state 30
 
+    Color                          shift and go to state 24
 
 state 18
 
-    (4) Canvas -> LParenthesis Dimensions BgColor . Position RParenthesis
-    (13) Position -> . POSITION Colon LessThan Int Comma Int GreaterThan
+    (3) Dimensions -> DIMENSIONS Colon LessThan . Int Comma Int GreaterThan
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    POSITION        shift and go to state 28
+    Digit           shift and go to state 32
 
-    Position                       shift and go to state 27
+    Int                            shift and go to state 31
 
 state 19
 
-    (6) BgColor -> BGCOLOR . Colon Color
+    (1) Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF . DRAW Draw
 
-    Colon           shift and go to state 29
+    DRAW            shift and go to state 33
 
 
 state 20
 
-    (5) Dimensions -> DIMENSIONS Colon . LessThan Int Comma Int GreaterThan
+    (12) Structure -> LParenthesis Struct . Data RParenthesis
+    (19) Data -> . DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan
 
-    LessThan        shift and go to state 30
+    DATA            shift and go to state 35
 
+    Data                           shift and go to state 34
 
 state 21
 
-    (14) Structure -> LParenthesis Struct Data . RParenthesis
+    (13) Struct -> STRUCT . Colon DS
 
-    RParenthesis    shift and go to state 31
+    Colon           shift and go to state 36
 
 
 state 22
 
-    (21) Data -> DATA . Colon LessThan Type Comma LBracket Arr RBracket GreaterThan
+    (2) Canvas -> LParenthesis Dimensions BgColor Position RParenthesis .
 
-    Colon           shift and go to state 32
+    DEF             reduce using rule 2 (Canvas -> LParenthesis Dimensions BgColor Position RParenthesis .)
 
 
 state 23
 
-    (15) Struct -> STRUCT Colon . DS
-    (16) DS -> . QUEUE
-    (17) DS -> . STACK
-    (18) DS -> . ARRAY
-    (19) DS -> . DLL
-    (20) DS -> . BST
+    (11) Position -> POSITION Colon . LessThan Int Comma Int GreaterThan
 
-    QUEUE           shift and go to state 34
-    STACK           shift and go to state 35
-    ARRAY           shift and go to state 36
-    DLL             shift and go to state 37
-    BST             shift and go to state 38
+    LessThan        shift and go to state 37
 
-    DS                             shift and go to state 33
 
 state 24
 
-    (25) Draw -> LParenthesis PenSize PenColor . RParenthesis
+    (4) BgColor -> BGCOLOR Colon Color .
 
-    RParenthesis    shift and go to state 39
+    POSITION        reduce using rule 4 (BgColor -> BGCOLOR Colon Color .)
 
 
 state 25
 
-    (27) PenColor -> PENCOLOR . Colon Color
+    (5) Color -> BLACK .
 
-    Colon           shift and go to state 40
+    POSITION        reduce using rule 5 (Color -> BLACK .)
+    RParenthesis    reduce using rule 5 (Color -> BLACK .)
 
 
 state 26
 
-    (26) PenSize -> PENSIZE Colon . Int PX
-    (28) Int -> . Digit
-    (29) Int -> . Int Digit
+    (6) Color -> BLUE .
 
-    Digit           shift and go to state 42
+    POSITION        reduce using rule 6 (Color -> BLUE .)
+    RParenthesis    reduce using rule 6 (Color -> BLUE .)
 
-    Int                            shift and go to state 41
 
 state 27
 
-    (4) Canvas -> LParenthesis Dimensions BgColor Position . RParenthesis
+    (7) Color -> YELLOW .
 
-    RParenthesis    shift and go to state 43
+    POSITION        reduce using rule 7 (Color -> YELLOW .)
+    RParenthesis    reduce using rule 7 (Color -> YELLOW .)
 
 
 state 28
 
-    (13) Position -> POSITION . Colon LessThan Int Comma Int GreaterThan
+    (8) Color -> RED .
 
-    Colon           shift and go to state 44
+    POSITION        reduce using rule 8 (Color -> RED .)
+    RParenthesis    reduce using rule 8 (Color -> RED .)
 
 
 state 29
 
-    (6) BgColor -> BGCOLOR Colon . Color
-    (7) Color -> . BLACK
-    (8) Color -> . BLUE
-    (9) Color -> . YELLOW
-    (10) Color -> . RED
-    (11) Color -> . GREEN
-    (12) Color -> . WHITE
+    (9) Color -> GREEN .
 
-    BLACK           shift and go to state 46
-    BLUE            shift and go to state 47
-    YELLOW          shift and go to state 48
-    RED             shift and go to state 49
-    GREEN           shift and go to state 50
-    WHITE           shift and go to state 51
+    POSITION        reduce using rule 9 (Color -> GREEN .)
+    RParenthesis    reduce using rule 9 (Color -> GREEN .)
 
-    Color                          shift and go to state 45
 
 state 30
 
-    (5) Dimensions -> DIMENSIONS Colon LessThan . Int Comma Int GreaterThan
-    (28) Int -> . Digit
-    (29) Int -> . Int Digit
+    (10) Color -> WHITE .
 
-    Digit           shift and go to state 42
+    POSITION        reduce using rule 10 (Color -> WHITE .)
+    RParenthesis    reduce using rule 10 (Color -> WHITE .)
 
-    Int                            shift and go to state 52
 
 state 31
 
-    (14) Structure -> LParenthesis Struct Data RParenthesis .
+    (3) Dimensions -> DIMENSIONS Colon LessThan Int . Comma Int GreaterThan
 
-    $end            reduce using rule 14 (Structure -> LParenthesis Struct Data RParenthesis .)
+    Comma           shift and go to state 38
 
 
 state 32
 
-    (21) Data -> DATA Colon . LessThan Type Comma LBracket Arr RBracket GreaterThan
+    (26) Int -> Digit .
+    (27) Int -> Digit . Int
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    LessThan        shift and go to state 53
+    Comma           reduce using rule 26 (Int -> Digit .)
+    GreaterThan     reduce using rule 26 (Int -> Digit .)
+    PX              reduce using rule 26 (Int -> Digit .)
+    RBracket        reduce using rule 26 (Int -> Digit .)
+    Digit           shift and go to state 32
 
+    Int                            shift and go to state 39
 
 state 33
 
-    (15) Struct -> STRUCT Colon DS .
+    (1) Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW . Draw
+    (23) Draw -> . LParenthesis PenSize PenColor RParenthesis
 
-    DATA            reduce using rule 15 (Struct -> STRUCT Colon DS .)
+    LParenthesis    shift and go to state 41
 
+    Draw                           shift and go to state 40
 
 state 34
 
-    (16) DS -> QUEUE .
+    (12) Structure -> LParenthesis Struct Data . RParenthesis
 
-    DATA            reduce using rule 16 (DS -> QUEUE .)
+    RParenthesis    shift and go to state 42
 
 
 state 35
 
-    (17) DS -> STACK .
+    (19) Data -> DATA . Colon LessThan Type Comma LBracket Arr RBracket GreaterThan
 
-    DATA            reduce using rule 17 (DS -> STACK .)
+    Colon           shift and go to state 43
 
 
 state 36
 
-    (18) DS -> ARRAY .
+    (13) Struct -> STRUCT Colon . DS
+    (14) DS -> . QUEUE
+    (15) DS -> . STACK
+    (16) DS -> . ARRAY
+    (17) DS -> . DLL
+    (18) DS -> . BST
 
-    DATA            reduce using rule 18 (DS -> ARRAY .)
+    QUEUE           shift and go to state 45
+    STACK           shift and go to state 46
+    ARRAY           shift and go to state 47
+    DLL             shift and go to state 48
+    BST             shift and go to state 49
 
+    DS                             shift and go to state 44
 
 state 37
 
-    (19) DS -> DLL .
+    (11) Position -> POSITION Colon LessThan . Int Comma Int GreaterThan
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    DATA            reduce using rule 19 (DS -> DLL .)
+    Digit           shift and go to state 32
 
+    Int                            shift and go to state 50
 
 state 38
 
-    (20) DS -> BST .
+    (3) Dimensions -> DIMENSIONS Colon LessThan Int Comma . Int GreaterThan
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    DATA            reduce using rule 20 (DS -> BST .)
+    Digit           shift and go to state 32
 
+    Int                            shift and go to state 51
 
 state 39
 
-    (25) Draw -> LParenthesis PenSize PenColor RParenthesis .
+    (27) Int -> Digit Int .
 
-    $end            reduce using rule 25 (Draw -> LParenthesis PenSize PenColor RParenthesis .)
+    Comma           reduce using rule 27 (Int -> Digit Int .)
+    GreaterThan     reduce using rule 27 (Int -> Digit Int .)
+    PX              reduce using rule 27 (Int -> Digit Int .)
+    RBracket        reduce using rule 27 (Int -> Digit Int .)
 
 
 state 40
 
-    (27) PenColor -> PENCOLOR Colon . Color
-    (7) Color -> . BLACK
-    (8) Color -> . BLUE
-    (9) Color -> . YELLOW
-    (10) Color -> . RED
-    (11) Color -> . GREEN
-    (12) Color -> . WHITE
+    (1) Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw .
 
-    BLACK           shift and go to state 46
-    BLUE            shift and go to state 47
-    YELLOW          shift and go to state 48
-    RED             shift and go to state 49
-    GREEN           shift and go to state 50
-    WHITE           shift and go to state 51
+    $end            reduce using rule 1 (Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw .)
 
-    Color                          shift and go to state 54
 
 state 41
 
-    (26) PenSize -> PENSIZE Colon Int . PX
-    (29) Int -> Int . Digit
+    (23) Draw -> LParenthesis . PenSize PenColor RParenthesis
+    (24) PenSize -> . PENSIZE Colon Int PX
 
-    PX              shift and go to state 55
-    Digit           shift and go to state 56
+    PENSIZE         shift and go to state 53
 
+    PenSize                        shift and go to state 52
 
 state 42
 
-    (28) Int -> Digit .
+    (12) Structure -> LParenthesis Struct Data RParenthesis .
 
-    PX              reduce using rule 28 (Int -> Digit .)
-    Digit           reduce using rule 28 (Int -> Digit .)
-    Comma           reduce using rule 28 (Int -> Digit .)
-    GreaterThan     reduce using rule 28 (Int -> Digit .)
-    RBracket        reduce using rule 28 (Int -> Digit .)
+    DEF             reduce using rule 12 (Structure -> LParenthesis Struct Data RParenthesis .)
 
 
 state 43
 
-    (4) Canvas -> LParenthesis Dimensions BgColor Position RParenthesis .
+    (19) Data -> DATA Colon . LessThan Type Comma LBracket Arr RBracket GreaterThan
 
-    $end            reduce using rule 4 (Canvas -> LParenthesis Dimensions BgColor Position RParenthesis .)
+    LessThan        shift and go to state 54
 
 
 state 44
 
-    (13) Position -> POSITION Colon . LessThan Int Comma Int GreaterThan
+    (13) Struct -> STRUCT Colon DS .
 
-    LessThan        shift and go to state 57
+    DATA            reduce using rule 13 (Struct -> STRUCT Colon DS .)
 
 
 state 45
 
-    (6) BgColor -> BGCOLOR Colon Color .
+    (14) DS -> QUEUE .
 
-    POSITION        reduce using rule 6 (BgColor -> BGCOLOR Colon Color .)
+    DATA            reduce using rule 14 (DS -> QUEUE .)
 
 
 state 46
 
-    (7) Color -> BLACK .
+    (15) DS -> STACK .
 
-    POSITION        reduce using rule 7 (Color -> BLACK .)
-    RParenthesis    reduce using rule 7 (Color -> BLACK .)
+    DATA            reduce using rule 15 (DS -> STACK .)
 
 
 state 47
 
-    (8) Color -> BLUE .
+    (16) DS -> ARRAY .
 
-    POSITION        reduce using rule 8 (Color -> BLUE .)
-    RParenthesis    reduce using rule 8 (Color -> BLUE .)
+    DATA            reduce using rule 16 (DS -> ARRAY .)
 
 
 state 48
 
-    (9) Color -> YELLOW .
+    (17) DS -> DLL .
 
-    POSITION        reduce using rule 9 (Color -> YELLOW .)
-    RParenthesis    reduce using rule 9 (Color -> YELLOW .)
+    DATA            reduce using rule 17 (DS -> DLL .)
 
 
 state 49
 
-    (10) Color -> RED .
+    (18) DS -> BST .
 
-    POSITION        reduce using rule 10 (Color -> RED .)
-    RParenthesis    reduce using rule 10 (Color -> RED .)
+    DATA            reduce using rule 18 (DS -> BST .)
 
 
 state 50
 
-    (11) Color -> GREEN .
+    (11) Position -> POSITION Colon LessThan Int . Comma Int GreaterThan
 
-    POSITION        reduce using rule 11 (Color -> GREEN .)
-    RParenthesis    reduce using rule 11 (Color -> GREEN .)
+    Comma           shift and go to state 55
 
 
 state 51
 
-    (12) Color -> WHITE .
+    (3) Dimensions -> DIMENSIONS Colon LessThan Int Comma Int . GreaterThan
 
-    POSITION        reduce using rule 12 (Color -> WHITE .)
-    RParenthesis    reduce using rule 12 (Color -> WHITE .)
+    GreaterThan     shift and go to state 56
 
 
 state 52
 
-    (5) Dimensions -> DIMENSIONS Colon LessThan Int . Comma Int GreaterThan
-    (29) Int -> Int . Digit
+    (23) Draw -> LParenthesis PenSize . PenColor RParenthesis
+    (25) PenColor -> . PENCOLOR Colon Color
 
-    Comma           shift and go to state 58
-    Digit           shift and go to state 56
+    PENCOLOR        shift and go to state 58
 
+    PenColor                       shift and go to state 57
 
 state 53
 
-    (21) Data -> DATA Colon LessThan . Type Comma LBracket Arr RBracket GreaterThan
-    (22) Type -> . INT
+    (24) PenSize -> PENSIZE . Colon Int PX
 
-    INT             shift and go to state 60
+    Colon           shift and go to state 59
 
-    Type                           shift and go to state 59
 
 state 54
 
-    (27) PenColor -> PENCOLOR Colon Color .
+    (19) Data -> DATA Colon LessThan . Type Comma LBracket Arr RBracket GreaterThan
+    (20) Type -> . INT
 
-    RParenthesis    reduce using rule 27 (PenColor -> PENCOLOR Colon Color .)
+    INT             shift and go to state 61
 
+    Type                           shift and go to state 60
 
 state 55
 
-    (26) PenSize -> PENSIZE Colon Int PX .
+    (11) Position -> POSITION Colon LessThan Int Comma . Int GreaterThan
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    PENCOLOR        reduce using rule 26 (PenSize -> PENSIZE Colon Int PX .)
+    Digit           shift and go to state 32
 
+    Int                            shift and go to state 62
 
 state 56
 
-    (29) Int -> Int Digit .
+    (3) Dimensions -> DIMENSIONS Colon LessThan Int Comma Int GreaterThan .
 
-    PX              reduce using rule 29 (Int -> Int Digit .)
-    Digit           reduce using rule 29 (Int -> Int Digit .)
-    Comma           reduce using rule 29 (Int -> Int Digit .)
-    GreaterThan     reduce using rule 29 (Int -> Int Digit .)
-    RBracket        reduce using rule 29 (Int -> Int Digit .)
+    BGCOLOR         reduce using rule 3 (Dimensions -> DIMENSIONS Colon LessThan Int Comma Int GreaterThan .)
 
 
 state 57
 
-    (13) Position -> POSITION Colon LessThan . Int Comma Int GreaterThan
-    (28) Int -> . Digit
-    (29) Int -> . Int Digit
+    (23) Draw -> LParenthesis PenSize PenColor . RParenthesis
 
-    Digit           shift and go to state 42
+    RParenthesis    shift and go to state 63
 
-    Int                            shift and go to state 61
 
 state 58
 
-    (5) Dimensions -> DIMENSIONS Colon LessThan Int Comma . Int GreaterThan
-    (28) Int -> . Digit
-    (29) Int -> . Int Digit
+    (25) PenColor -> PENCOLOR . Colon Color
 
-    Digit           shift and go to state 42
+    Colon           shift and go to state 64
 
-    Int                            shift and go to state 62
 
 state 59
 
-    (21) Data -> DATA Colon LessThan Type . Comma LBracket Arr RBracket GreaterThan
+    (24) PenSize -> PENSIZE Colon . Int PX
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    Comma           shift and go to state 63
+    Digit           shift and go to state 32
 
+    Int                            shift and go to state 65
 
 state 60
 
-    (22) Type -> INT .
+    (19) Data -> DATA Colon LessThan Type . Comma LBracket Arr RBracket GreaterThan
 
-    Comma           reduce using rule 22 (Type -> INT .)
+    Comma           shift and go to state 66
 
 
 state 61
 
-    (13) Position -> POSITION Colon LessThan Int . Comma Int GreaterThan
-    (29) Int -> Int . Digit
+    (20) Type -> INT .
 
-    Comma           shift and go to state 64
-    Digit           shift and go to state 56
+    Comma           reduce using rule 20 (Type -> INT .)
 
 
 state 62
 
-    (5) Dimensions -> DIMENSIONS Colon LessThan Int Comma Int . GreaterThan
-    (29) Int -> Int . Digit
+    (11) Position -> POSITION Colon LessThan Int Comma Int . GreaterThan
 
-    GreaterThan     shift and go to state 65
-    Digit           shift and go to state 56
+    GreaterThan     shift and go to state 67
 
 
 state 63
 
-    (21) Data -> DATA Colon LessThan Type Comma . LBracket Arr RBracket GreaterThan
+    (23) Draw -> LParenthesis PenSize PenColor RParenthesis .
 
-    LBracket        shift and go to state 66
+    $end            reduce using rule 23 (Draw -> LParenthesis PenSize PenColor RParenthesis .)
 
 
 state 64
 
-    (13) Position -> POSITION Colon LessThan Int Comma . Int GreaterThan
-    (28) Int -> . Digit
-    (29) Int -> . Int Digit
+    (25) PenColor -> PENCOLOR Colon . Color
+    (5) Color -> . BLACK
+    (6) Color -> . BLUE
+    (7) Color -> . YELLOW
+    (8) Color -> . RED
+    (9) Color -> . GREEN
+    (10) Color -> . WHITE
 
-    Digit           shift and go to state 42
+    BLACK           shift and go to state 25
+    BLUE            shift and go to state 26
+    YELLOW          shift and go to state 27
+    RED             shift and go to state 28
+    GREEN           shift and go to state 29
+    WHITE           shift and go to state 30
 
-    Int                            shift and go to state 67
+    Color                          shift and go to state 68
 
 state 65
 
-    (5) Dimensions -> DIMENSIONS Colon LessThan Int Comma Int GreaterThan .
+    (24) PenSize -> PENSIZE Colon Int . PX
 
-    BGCOLOR         reduce using rule 5 (Dimensions -> DIMENSIONS Colon LessThan Int Comma Int GreaterThan .)
+    PX              shift and go to state 69
 
 
 state 66
 
-    (21) Data -> DATA Colon LessThan Type Comma LBracket . Arr RBracket GreaterThan
-    (23) Arr -> . Int
-    (24) Arr -> . Arr Comma Int
-    (28) Int -> . Digit
-    (29) Int -> . Int Digit
+    (19) Data -> DATA Colon LessThan Type Comma . LBracket Arr RBracket GreaterThan
 
-    Digit           shift and go to state 42
+    LBracket        shift and go to state 70
 
-    Arr                            shift and go to state 68
-    Int                            shift and go to state 69
 
 state 67
 
-    (13) Position -> POSITION Colon LessThan Int Comma Int . GreaterThan
-    (29) Int -> Int . Digit
+    (11) Position -> POSITION Colon LessThan Int Comma Int GreaterThan .
 
-    GreaterThan     shift and go to state 70
-    Digit           shift and go to state 56
+    RParenthesis    reduce using rule 11 (Position -> POSITION Colon LessThan Int Comma Int GreaterThan .)
 
 
 state 68
 
-    (21) Data -> DATA Colon LessThan Type Comma LBracket Arr . RBracket GreaterThan
-    (24) Arr -> Arr . Comma Int
+    (25) PenColor -> PENCOLOR Colon Color .
 
-    RBracket        shift and go to state 72
-    Comma           shift and go to state 71
+    RParenthesis    reduce using rule 25 (PenColor -> PENCOLOR Colon Color .)
 
 
 state 69
 
-    (23) Arr -> Int .
-    (29) Int -> Int . Digit
+    (24) PenSize -> PENSIZE Colon Int PX .
 
-    RBracket        reduce using rule 23 (Arr -> Int .)
-    Comma           reduce using rule 23 (Arr -> Int .)
-    Digit           shift and go to state 56
+    PENCOLOR        reduce using rule 24 (PenSize -> PENSIZE Colon Int PX .)
 
 
 state 70
 
-    (13) Position -> POSITION Colon LessThan Int Comma Int GreaterThan .
+    (19) Data -> DATA Colon LessThan Type Comma LBracket . Arr RBracket GreaterThan
+    (21) Arr -> . Int
+    (22) Arr -> . Arr Comma Int
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    RParenthesis    reduce using rule 13 (Position -> POSITION Colon LessThan Int Comma Int GreaterThan .)
+    Digit           shift and go to state 32
 
+    Arr                            shift and go to state 71
+    Int                            shift and go to state 72
 
 state 71
 
-    (24) Arr -> Arr Comma . Int
-    (28) Int -> . Digit
-    (29) Int -> . Int Digit
+    (19) Data -> DATA Colon LessThan Type Comma LBracket Arr . RBracket GreaterThan
+    (22) Arr -> Arr . Comma Int
 
-    Digit           shift and go to state 42
+    RBracket        shift and go to state 74
+    Comma           shift and go to state 73
 
-    Int                            shift and go to state 73
 
 state 72
 
-    (21) Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket . GreaterThan
+    (21) Arr -> Int .
 
-    GreaterThan     shift and go to state 74
+    RBracket        reduce using rule 21 (Arr -> Int .)
+    Comma           reduce using rule 21 (Arr -> Int .)
 
 
 state 73
 
-    (24) Arr -> Arr Comma Int .
-    (29) Int -> Int . Digit
+    (22) Arr -> Arr Comma . Int
+    (26) Int -> . Digit
+    (27) Int -> . Digit Int
 
-    RBracket        reduce using rule 24 (Arr -> Arr Comma Int .)
-    Comma           reduce using rule 24 (Arr -> Arr Comma Int .)
-    Digit           shift and go to state 56
+    Digit           shift and go to state 32
 
+    Int                            shift and go to state 75
 
 state 74
 
-    (21) Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan .
+    (19) Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket . GreaterThan
 
-    RParenthesis    reduce using rule 21 (Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan .)
+    GreaterThan     shift and go to state 76
+
+
+state 75
+
+    (22) Arr -> Arr Comma Int .
+
+    RBracket        reduce using rule 22 (Arr -> Arr Comma Int .)
+    Comma           reduce using rule 22 (Arr -> Arr Comma Int .)
+
+
+state 76
+
+    (19) Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan .
+
+    RParenthesis    reduce using rule 19 (Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan .)
 
