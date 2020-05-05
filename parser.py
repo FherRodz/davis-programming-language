@@ -22,11 +22,11 @@ def p_Func(p):
 #     '''
 #         Def : Exp
 #     '''
-# def p_Bool(p):
-#     '''
-#         Bool : true
-#              | false
-#     '''
+def p_Bool(p):
+    '''
+        Bool : true
+             | false
+    '''
 def p_Canvas(p):
     '''
         Canvas : LParenthesis Dimensions BgColor Position RParenthesis
@@ -100,6 +100,10 @@ def p_PenColor(p):
     '''
     PenColor : PENCOLOR Colon Color
     '''
+def p_Animation(p):
+    """
+    Animation : ANIMATION Colon Bool
+    """
 def p_Int(p):
     '''
     Int : Digit

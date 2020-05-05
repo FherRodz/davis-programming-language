@@ -23,17 +23,18 @@ reservedWords = {
         'penSize' : 'PENSIZE',
         'px': 'PX',
         'penColor' : 'PENCOLOR',
+        'animation' : 'ANIMATION',
 
 
 }
 
 colors = {
-    'black' : 'BLACK',
-    'blue' : 'BLUE',
-    'yellow' : 'YELLOW',
-    'red' : 'RED',
-    'green' : 'GREEN',
-    'white' : 'WHITE',
+    'BLACK' : 'BLACK',
+    'BLUE' : 'BLUE',
+    'YELLOW' : 'YELLOW',
+    'RED' : 'RED',
+    'GREEN' : 'GREEN',
+    'WHITE' : 'WHITE',
 }
 
 dataStructures = {
@@ -62,13 +63,13 @@ t_Digit = r'[0-9]'
 t_ignore  = ' \t'
 
 def t_RESERVED(t):
-    r'true | false | def | canvas | structures | draw | dimensions | bgColor | position | struct | data | int | penSize  | px | penColor'
+    r'true | false | def | canvas | structures | draw | dimensions | bgColor | position | struct | data | int | penSize  | px | penColor | animation'
     if t.value in reservedWords:
         t.type = reservedWords[t.value]
     return t
 
 def t_COLORS(t):
-    r'black | blue | yellow | red | green | white'
+    r'BLACK | BLUE | YELLOW | RED | GREEN | WHITE'
     if t.value in colors:
         t.type = colors[t.value]
     return t
@@ -91,7 +92,7 @@ def t_error(t):
 test = '''
 def canvas(
     dimensions:<400,400>
-    bgColor:black
+    bgColor:BLACK
     position:<500,700>
 )
 
@@ -102,7 +103,8 @@ def structures(
 
 def draw(
     penSize:10px
-    penColor:white
+    penColor:WHITE
+    animation:false
 ) '''
 
 lexer = lex.lex()
