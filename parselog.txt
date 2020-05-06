@@ -1,501 +1,308 @@
    yacc.py: 362:PLY: PARSE DEBUG START
    yacc.py: 410:
    yacc.py: 411:State  : 0
-   yacc.py: 435:Stack  : . LexToken(DEF,'def',16,0)
+   yacc.py: 435:Stack  : . LexToken(DEF,'def',17,0)
    yacc.py: 445:Action : Shift and goto state 2
    yacc.py: 410:
    yacc.py: 411:State  : 2
-   yacc.py: 435:Stack  : DEF . LexToken(CANVAS,'canvas',16,4)
+   yacc.py: 435:Stack  : DEF . LexToken(CANVAS,'canvas',17,4)
    yacc.py: 445:Action : Shift and goto state 3
    yacc.py: 410:
    yacc.py: 411:State  : 3
-   yacc.py: 435:Stack  : DEF CANVAS . LexToken(LParenthesis,'(',16,10)
+   yacc.py: 435:Stack  : DEF CANVAS . LexToken(LParenthesis,'(',17,10)
    yacc.py: 445:Action : Shift and goto state 5
    yacc.py: 410:
    yacc.py: 411:State  : 5
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis . LexToken(DIMENSIONS,'dimensions',16,11)
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis . LexToken(DIMENSIONS,'dimensions',17,11)
    yacc.py: 445:Action : Shift and goto state 8
    yacc.py: 410:
    yacc.py: 411:State  : 8
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS . LexToken(Colon,':',16,21)
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS . LexToken(Colon,':',17,21)
    yacc.py: 445:Action : Shift and goto state 12
    yacc.py: 410:
    yacc.py: 411:State  : 12
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon . LexToken(LessThan,'<',16,22)
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon . LexToken(LessThan,'<',17,22)
    yacc.py: 445:Action : Shift and goto state 18
    yacc.py: 410:
    yacc.py: 411:State  : 18
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan . LexToken(Digit,'4',16,23)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Digit . LexToken(Digit,'0',16,24)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Digit Digit . LexToken(Digit,'0',16,25)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Digit Digit Digit . LexToken(Comma,',',16,26)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['0'] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Digit Digit Int . LexToken(Comma,',',16,26)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['0',None] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Digit Int . LexToken(Comma,',',16,26)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['4',None] and goto state 31
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan . LexToken(Integer,400,17,23)
+   yacc.py: 445:Action : Shift and goto state 31
    yacc.py: 410:
    yacc.py: 411:State  : 31
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int . LexToken(Comma,',',16,26)
-   yacc.py: 445:Action : Shift and goto state 38
-   yacc.py: 410:
-   yacc.py: 411:State  : 38
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma . LexToken(Digit,'4',16,27)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma Digit . LexToken(Digit,'0',16,28)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma Digit Digit . LexToken(Digit,'0',16,29)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma Digit Digit Digit . LexToken(GreaterThan,'>',16,30)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['0'] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma Digit Digit Int . LexToken(GreaterThan,'>',16,30)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['0',None] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma Digit Int . LexToken(GreaterThan,'>',16,30)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['4',None] and goto state 51
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 51
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma Int . LexToken(GreaterThan,'>',16,30)
-   yacc.py: 445:Action : Shift and goto state 56
-   yacc.py: 410:
-   yacc.py: 411:State  : 56
-   yacc.py: 430:Defaulted state 56: Reduce using 3
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Int Comma Int GreaterThan . None
-   yacc.py: 471:Action : Reduce rule [Dimensions -> DIMENSIONS Colon LessThan Int Comma Int GreaterThan] with ['dimensions',':','<',None,',',None,'>'] and goto state 7
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 7
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions . LexToken(BGCOLOR,'bgColor',16,31)
-   yacc.py: 445:Action : Shift and goto state 11
-   yacc.py: 410:
-   yacc.py: 411:State  : 11
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR . LexToken(Colon,':',16,38)
-   yacc.py: 445:Action : Shift and goto state 17
-   yacc.py: 410:
-   yacc.py: 411:State  : 17
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR Colon . LexToken(BLACK,'black',16,39)
-   yacc.py: 445:Action : Shift and goto state 25
-   yacc.py: 410:
-   yacc.py: 411:State  : 25
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR Colon BLACK . LexToken(POSITION,'position',16,44)
-   yacc.py: 471:Action : Reduce rule [Color -> BLACK] with ['black'] and goto state 24
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 24
-   yacc.py: 430:Defaulted state 24: Reduce using 4
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR Colon Color . LexToken(POSITION,'position',16,44)
-   yacc.py: 471:Action : Reduce rule [BgColor -> BGCOLOR Colon Color] with ['bgColor',':',None] and goto state 10
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 10
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor . LexToken(POSITION,'position',16,44)
-   yacc.py: 445:Action : Shift and goto state 16
-   yacc.py: 410:
-   yacc.py: 411:State  : 16
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION . LexToken(Colon,':',16,52)
-   yacc.py: 445:Action : Shift and goto state 23
-   yacc.py: 410:
-   yacc.py: 411:State  : 23
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon . LexToken(LessThan,'<',16,53)
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Integer . LexToken(Comma,',',17,26)
    yacc.py: 445:Action : Shift and goto state 37
    yacc.py: 410:
    yacc.py: 411:State  : 37
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan . LexToken(Digit,'5',16,54)
-   yacc.py: 445:Action : Shift and goto state 32
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Integer Comma . LexToken(Integer,400,17,27)
+   yacc.py: 445:Action : Shift and goto state 49
    yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Digit . LexToken(Digit,'0',16,55)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Digit Digit . LexToken(Digit,'0',16,56)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Digit Digit Digit . LexToken(Comma,',',16,57)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['0'] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Digit Digit Int . LexToken(Comma,',',16,57)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['0',None] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Digit Int . LexToken(Comma,',',16,57)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['5',None] and goto state 50
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 50
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int . LexToken(Comma,',',16,57)
-   yacc.py: 445:Action : Shift and goto state 55
-   yacc.py: 410:
-   yacc.py: 411:State  : 55
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma . LexToken(Digit,'7',16,58)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma Digit . LexToken(Digit,'0',16,59)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma Digit Digit . LexToken(Digit,'0',16,60)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma Digit Digit Digit . LexToken(GreaterThan,'>',16,61)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['0'] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma Digit Digit Int . LexToken(GreaterThan,'>',16,61)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['0',None] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma Digit Int . LexToken(GreaterThan,'>',16,61)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['7',None] and goto state 62
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 62
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma Int . LexToken(GreaterThan,'>',16,61)
-   yacc.py: 445:Action : Shift and goto state 67
-   yacc.py: 410:
-   yacc.py: 411:State  : 67
-   yacc.py: 430:Defaulted state 67: Reduce using 11
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Int Comma Int GreaterThan . None
-   yacc.py: 471:Action : Reduce rule [Position -> POSITION Colon LessThan Int Comma Int GreaterThan] with ['position',':','<',None,',',None,'>'] and goto state 15
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 15
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor Position . LexToken(RParenthesis,')',16,62)
-   yacc.py: 445:Action : Shift and goto state 22
-   yacc.py: 410:
-   yacc.py: 411:State  : 22
-   yacc.py: 430:Defaulted state 22: Reduce using 2
-   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor Position RParenthesis . None
-   yacc.py: 471:Action : Reduce rule [Canvas -> LParenthesis Dimensions BgColor Position RParenthesis] with ['(',None,None,None,')'] and goto state 4
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 4
-   yacc.py: 435:Stack  : DEF CANVAS Canvas . LexToken(DEF,'def',16,63)
-   yacc.py: 445:Action : Shift and goto state 6
-   yacc.py: 410:
-   yacc.py: 411:State  : 6
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF . LexToken(STRUCTURES,'structures',16,66)
-   yacc.py: 445:Action : Shift and goto state 9
-   yacc.py: 410:
-   yacc.py: 411:State  : 9
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES . LexToken(LParenthesis,'(',16,76)
-   yacc.py: 445:Action : Shift and goto state 14
-   yacc.py: 410:
-   yacc.py: 411:State  : 14
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis . LexToken(STRUCT,'struct',16,77)
-   yacc.py: 445:Action : Shift and goto state 21
-   yacc.py: 410:
-   yacc.py: 411:State  : 21
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT . LexToken(Colon,':',16,83)
-   yacc.py: 445:Action : Shift and goto state 36
-   yacc.py: 410:
-   yacc.py: 411:State  : 36
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT Colon . LexToken(QUEUE,'queue',16,84)
-   yacc.py: 445:Action : Shift and goto state 45
-   yacc.py: 410:
-   yacc.py: 411:State  : 45
-   yacc.py: 430:Defaulted state 45: Reduce using 14
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT Colon QUEUE . None
-   yacc.py: 471:Action : Reduce rule [DS -> QUEUE] with ['queue'] and goto state 44
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 44
-   yacc.py: 430:Defaulted state 44: Reduce using 13
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT Colon DS . None
-   yacc.py: 471:Action : Reduce rule [Struct -> STRUCT Colon DS] with ['struct',':',None] and goto state 20
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 20
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct . LexToken(DATA,'data',16,89)
-   yacc.py: 445:Action : Shift and goto state 35
-   yacc.py: 410:
-   yacc.py: 411:State  : 35
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA . LexToken(Colon,':',16,93)
-   yacc.py: 445:Action : Shift and goto state 43
-   yacc.py: 410:
-   yacc.py: 411:State  : 43
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon . LexToken(LessThan,'<',16,94)
+   yacc.py: 411:State  : 49
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Integer Comma Integer . LexToken(GreaterThan,'>',17,30)
    yacc.py: 445:Action : Shift and goto state 54
    yacc.py: 410:
    yacc.py: 411:State  : 54
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan . LexToken(INT,'int',16,95)
-   yacc.py: 445:Action : Shift and goto state 61
+   yacc.py: 430:Defaulted state 54: Reduce using 5
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis DIMENSIONS Colon LessThan Integer Comma Integer GreaterThan . None
+   yacc.py: 471:Action : Reduce rule [Dimensions -> DIMENSIONS Colon LessThan Integer Comma Integer GreaterThan] with ['dimensions',':','<',400,',',400,'>'] and goto state 7
+   yacc.py: 506:Result : <tuple @ 0x3202288> ((400, 400))
    yacc.py: 410:
-   yacc.py: 411:State  : 61
-   yacc.py: 430:Defaulted state 61: Reduce using 20
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan INT . None
-   yacc.py: 471:Action : Reduce rule [Type -> INT] with ['int'] and goto state 60
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 411:State  : 7
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions . LexToken(BGCOLOR,'bgColor',17,32)
+   yacc.py: 445:Action : Shift and goto state 11
    yacc.py: 410:
-   yacc.py: 411:State  : 60
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type . LexToken(Comma,',',16,98)
-   yacc.py: 445:Action : Shift and goto state 66
+   yacc.py: 411:State  : 11
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR . LexToken(Colon,':',17,39)
+   yacc.py: 445:Action : Shift and goto state 17
    yacc.py: 410:
-   yacc.py: 411:State  : 66
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma . LexToken(LBracket,'[',16,100)
-   yacc.py: 445:Action : Shift and goto state 70
+   yacc.py: 411:State  : 17
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR Colon . LexToken(BLACK,'BLACK',17,40)
+   yacc.py: 445:Action : Shift and goto state 25
    yacc.py: 410:
-   yacc.py: 411:State  : 70
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket . LexToken(Digit,'1',16,101)
-   yacc.py: 445:Action : Shift and goto state 32
+   yacc.py: 411:State  : 25
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR Colon BLACK . LexToken(POSITION,'position',17,46)
+   yacc.py: 471:Action : Reduce rule [Color -> BLACK] with ['BLACK'] and goto state 24
+   yacc.py: 506:Result : <str @ 0x320f080> ('BLACK')
    yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Digit . LexToken(Digit,'0',16,102)
-   yacc.py: 445:Action : Shift and goto state 32
+   yacc.py: 411:State  : 24
+   yacc.py: 430:Defaulted state 24: Reduce using 6
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BGCOLOR Colon Color . LexToken(POSITION,'position',17,46)
+   yacc.py: 471:Action : Reduce rule [BgColor -> BGCOLOR Colon Color] with ['bgColor',':','BLACK'] and goto state 10
+   yacc.py: 506:Result : <str @ 0x320f080> ('BLACK')
    yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Digit Digit . LexToken(Comma,',',16,103)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['0'] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 411:State  : 10
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor . LexToken(POSITION,'position',17,46)
+   yacc.py: 445:Action : Shift and goto state 16
    yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Digit Int . LexToken(Comma,',',16,103)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['1',None] and goto state 72
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 411:State  : 16
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION . LexToken(Colon,':',17,54)
+   yacc.py: 445:Action : Shift and goto state 23
    yacc.py: 410:
-   yacc.py: 411:State  : 72
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Int . LexToken(Comma,',',16,103)
-   yacc.py: 471:Action : Reduce rule [Arr -> Int] with [None] and goto state 71
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 411:State  : 23
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon . LexToken(LessThan,'<',17,55)
+   yacc.py: 445:Action : Shift and goto state 36
    yacc.py: 410:
-   yacc.py: 411:State  : 71
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr . LexToken(Comma,',',16,103)
-   yacc.py: 445:Action : Shift and goto state 73
+   yacc.py: 411:State  : 36
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan . LexToken(Integer,500,17,56)
+   yacc.py: 445:Action : Shift and goto state 48
    yacc.py: 410:
-   yacc.py: 411:State  : 73
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma . LexToken(Digit,'7',16,104)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Digit . LexToken(Comma,',',16,105)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['7'] and goto state 75
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 75
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Int . LexToken(Comma,',',16,105)
-   yacc.py: 471:Action : Reduce rule [Arr -> Arr Comma Int] with [None,',',None] and goto state 71
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 71
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr . LexToken(Comma,',',16,105)
-   yacc.py: 445:Action : Shift and goto state 73
-   yacc.py: 410:
-   yacc.py: 411:State  : 73
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma . LexToken(Digit,'5',16,106)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Digit . LexToken(Comma,',',16,107)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['5'] and goto state 75
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 75
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Int . LexToken(Comma,',',16,107)
-   yacc.py: 471:Action : Reduce rule [Arr -> Arr Comma Int] with [None,',',None] and goto state 71
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 71
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr . LexToken(Comma,',',16,107)
-   yacc.py: 445:Action : Shift and goto state 73
-   yacc.py: 410:
-   yacc.py: 411:State  : 73
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma . LexToken(Digit,'3',16,108)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Digit . LexToken(Comma,',',16,109)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['3'] and goto state 75
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 75
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Int . LexToken(Comma,',',16,109)
-   yacc.py: 471:Action : Reduce rule [Arr -> Arr Comma Int] with [None,',',None] and goto state 71
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 71
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr . LexToken(Comma,',',16,109)
-   yacc.py: 445:Action : Shift and goto state 73
-   yacc.py: 410:
-   yacc.py: 411:State  : 73
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma . LexToken(Digit,'1',16,110)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Digit . LexToken(Comma,',',16,111)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['1'] and goto state 75
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 75
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Int . LexToken(Comma,',',16,111)
-   yacc.py: 471:Action : Reduce rule [Arr -> Arr Comma Int] with [None,',',None] and goto state 71
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 71
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr . LexToken(Comma,',',16,111)
-   yacc.py: 445:Action : Shift and goto state 73
-   yacc.py: 410:
-   yacc.py: 411:State  : 73
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma . LexToken(Digit,'0',16,112)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Digit . LexToken(RBracket,']',16,113)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['0'] and goto state 75
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 75
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr Comma Int . LexToken(RBracket,']',16,113)
-   yacc.py: 471:Action : Reduce rule [Arr -> Arr Comma Int] with [None,',',None] and goto state 71
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 71
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr . LexToken(RBracket,']',16,113)
-   yacc.py: 445:Action : Shift and goto state 74
-   yacc.py: 410:
-   yacc.py: 411:State  : 74
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr RBracket . LexToken(GreaterThan,'>',16,114)
-   yacc.py: 445:Action : Shift and goto state 76
-   yacc.py: 410:
-   yacc.py: 411:State  : 76
-   yacc.py: 430:Defaulted state 76: Reduce using 19
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan . None
-   yacc.py: 471:Action : Reduce rule [Data -> DATA Colon LessThan Type Comma LBracket Arr RBracket GreaterThan] with ['data',':','<',None,',','[',None,']','>'] and goto state 34
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 34
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct Data . LexToken(RParenthesis,')',16,115)
-   yacc.py: 445:Action : Shift and goto state 42
-   yacc.py: 410:
-   yacc.py: 411:State  : 42
-   yacc.py: 430:Defaulted state 42: Reduce using 12
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct Data RParenthesis . None
-   yacc.py: 471:Action : Reduce rule [Structure -> LParenthesis Struct Data RParenthesis] with ['(',None,None,')'] and goto state 13
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 13
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure . LexToken(DEF,'def',16,116)
-   yacc.py: 445:Action : Shift and goto state 19
-   yacc.py: 410:
-   yacc.py: 411:State  : 19
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF . LexToken(DRAW,'draw',16,120)
-   yacc.py: 445:Action : Shift and goto state 33
-   yacc.py: 410:
-   yacc.py: 411:State  : 33
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW . LexToken(LParenthesis,'(',16,124)
-   yacc.py: 445:Action : Shift and goto state 41
-   yacc.py: 410:
-   yacc.py: 411:State  : 41
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis . LexToken(PENSIZE,'penSize',16,125)
+   yacc.py: 411:State  : 48
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Integer . LexToken(Comma,',',17,59)
    yacc.py: 445:Action : Shift and goto state 53
    yacc.py: 410:
    yacc.py: 411:State  : 53
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE . LexToken(Colon,':',16,132)
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Integer Comma . LexToken(Integer,700,17,60)
+   yacc.py: 445:Action : Shift and goto state 60
+   yacc.py: 410:
+   yacc.py: 411:State  : 60
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Integer Comma Integer . LexToken(GreaterThan,'>',17,63)
+   yacc.py: 445:Action : Shift and goto state 66
+   yacc.py: 410:
+   yacc.py: 411:State  : 66
+   yacc.py: 430:Defaulted state 66: Reduce using 13
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor POSITION Colon LessThan Integer Comma Integer GreaterThan . None
+   yacc.py: 471:Action : Reduce rule [Position -> POSITION Colon LessThan Integer Comma Integer GreaterThan] with ['position',':','<',500,',',700,'>'] and goto state 15
+   yacc.py: 506:Result : <tuple @ 0x31ebf80> ((500, 700))
+   yacc.py: 410:
+   yacc.py: 411:State  : 15
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor Position . LexToken(RParenthesis,')',17,64)
+   yacc.py: 445:Action : Shift and goto state 22
+   yacc.py: 410:
+   yacc.py: 411:State  : 22
+   yacc.py: 430:Defaulted state 22: Reduce using 4
+   yacc.py: 435:Stack  : DEF CANVAS LParenthesis Dimensions BgColor Position RParenthesis . None
+   yacc.py: 471:Action : Reduce rule [Canvas -> LParenthesis Dimensions BgColor Position RParenthesis] with ['(',(400, 400),'BLACK',(500, 700),')'] and goto state 4
+   yacc.py: 506:Result : <list @ 0x3207968> ([(400, 400), 'BLACK', (500, 700)])
+   yacc.py: 410:
+   yacc.py: 411:State  : 4
+   yacc.py: 435:Stack  : DEF CANVAS Canvas . LexToken(DEF,'def',17,66)
+   yacc.py: 445:Action : Shift and goto state 6
+   yacc.py: 410:
+   yacc.py: 411:State  : 6
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF . LexToken(STRUCTURES,'structures',17,70)
+   yacc.py: 445:Action : Shift and goto state 9
+   yacc.py: 410:
+   yacc.py: 411:State  : 9
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES . LexToken(LParenthesis,'(',17,80)
+   yacc.py: 445:Action : Shift and goto state 14
+   yacc.py: 410:
+   yacc.py: 411:State  : 14
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis . LexToken(STRUCT,'struct',17,81)
+   yacc.py: 445:Action : Shift and goto state 21
+   yacc.py: 410:
+   yacc.py: 411:State  : 21
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT . LexToken(Colon,':',17,87)
+   yacc.py: 445:Action : Shift and goto state 35
+   yacc.py: 410:
+   yacc.py: 411:State  : 35
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT Colon . LexToken(QUEUE,'queue',17,88)
+   yacc.py: 445:Action : Shift and goto state 43
+   yacc.py: 410:
+   yacc.py: 411:State  : 43
+   yacc.py: 430:Defaulted state 43: Reduce using 16
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT Colon QUEUE . None
+   yacc.py: 471:Action : Reduce rule [DS -> QUEUE] with ['queue'] and goto state 42
+   yacc.py: 506:Result : <str @ 0x320f060> ('queue')
+   yacc.py: 410:
+   yacc.py: 411:State  : 42
+   yacc.py: 430:Defaulted state 42: Reduce using 15
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis STRUCT Colon DS . None
+   yacc.py: 471:Action : Reduce rule [Struct -> STRUCT Colon DS] with ['struct',':','queue'] and goto state 20
+   yacc.py: 506:Result : <str @ 0x320f060> ('queue')
+   yacc.py: 410:
+   yacc.py: 411:State  : 20
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct . LexToken(DATA,'data',17,94)
+   yacc.py: 445:Action : Shift and goto state 34
+   yacc.py: 410:
+   yacc.py: 411:State  : 34
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA . LexToken(Colon,':',17,98)
+   yacc.py: 445:Action : Shift and goto state 41
+   yacc.py: 410:
+   yacc.py: 411:State  : 41
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon . LexToken(LessThan,'<',17,99)
+   yacc.py: 445:Action : Shift and goto state 52
+   yacc.py: 410:
+   yacc.py: 411:State  : 52
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan . LexToken(INT,'int',17,100)
    yacc.py: 445:Action : Shift and goto state 59
    yacc.py: 410:
    yacc.py: 411:State  : 59
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon . LexToken(Digit,'1',16,133)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon Digit . LexToken(Digit,'0',16,134)
-   yacc.py: 445:Action : Shift and goto state 32
-   yacc.py: 410:
-   yacc.py: 411:State  : 32
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon Digit Digit . LexToken(PX,'px',16,135)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit] with ['0'] and goto state 39
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 39
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon Digit Int . LexToken(PX,'px',16,135)
-   yacc.py: 471:Action : Reduce rule [Int -> Digit Int] with ['1',None] and goto state 65
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 65
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon Int . LexToken(PX,'px',16,135)
-   yacc.py: 445:Action : Shift and goto state 69
-   yacc.py: 410:
-   yacc.py: 411:State  : 69
-   yacc.py: 430:Defaulted state 69: Reduce using 24
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon Int PX . None
-   yacc.py: 471:Action : Reduce rule [PenSize -> PENSIZE Colon Int PX] with ['penSize',':',None,'px'] and goto state 52
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
-   yacc.py: 410:
-   yacc.py: 411:State  : 52
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize . LexToken(PENCOLOR,'penColor',16,137)
-   yacc.py: 445:Action : Shift and goto state 58
+   yacc.py: 430:Defaulted state 59: Reduce using 22
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan INT . None
+   yacc.py: 471:Action : Reduce rule [Type -> INT] with ['int'] and goto state 58
+   yacc.py: 506:Result : <str @ 0x320f0e0> ('int')
    yacc.py: 410:
    yacc.py: 411:State  : 58
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR . LexToken(Colon,':',16,145)
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type . LexToken(Comma,',',17,103)
+   yacc.py: 445:Action : Shift and goto state 65
+   yacc.py: 410:
+   yacc.py: 411:State  : 65
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma . LexToken(Array,['10', '7', '5', '3', '1', '0'],17,105)
+   yacc.py: 445:Action : Shift and goto state 72
+   yacc.py: 410:
+   yacc.py: 411:State  : 72
+   yacc.py: 430:Defaulted state 72: Reduce using 23
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma Array . None
+   yacc.py: 471:Action : Reduce rule [Arr -> Array] with [<list @ 0x3207bc0>] and goto state 71
+   yacc.py: 506:Result : <list @ 0x3207bc0> (['10', '7', '5', '3', '1', '0'])
+   yacc.py: 410:
+   yacc.py: 411:State  : 71
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma Arr . LexToken(GreaterThan,'>',17,119)
+   yacc.py: 445:Action : Shift and goto state 76
+   yacc.py: 410:
+   yacc.py: 411:State  : 76
+   yacc.py: 430:Defaulted state 76: Reduce using 21
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct DATA Colon LessThan Type Comma Arr GreaterThan . None
+   yacc.py: 471:Action : Reduce rule [Data -> DATA Colon LessThan Type Comma Arr GreaterThan] with ['data',':','<','int',',',<list @ 0x3207bc0>,'>'] and goto state 33
+   yacc.py: 506:Result : <tuple @ 0x3202eb8> (('int', ['10', '7', '5', '3', '1', '0']))
+   yacc.py: 410:
+   yacc.py: 411:State  : 33
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct Data . LexToken(RParenthesis,')',17,120)
+   yacc.py: 445:Action : Shift and goto state 40
+   yacc.py: 410:
+   yacc.py: 411:State  : 40
+   yacc.py: 430:Defaulted state 40: Reduce using 14
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES LParenthesis Struct Data RParenthesis . None
+   yacc.py: 471:Action : Reduce rule [Structure -> LParenthesis Struct Data RParenthesis] with ['(','queue',<tuple @ 0x3202eb8>,')'] and goto state 13
+   yacc.py: 506:Result : <list @ 0x3207918> (['queue', ('int', ['10', '7', '5', '3',  ...)
+   yacc.py: 410:
+   yacc.py: 411:State  : 13
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure . LexToken(DEF,'def',17,122)
+   yacc.py: 445:Action : Shift and goto state 19
+   yacc.py: 410:
+   yacc.py: 411:State  : 19
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF . LexToken(DRAW,'draw',17,126)
+   yacc.py: 445:Action : Shift and goto state 32
+   yacc.py: 410:
+   yacc.py: 411:State  : 32
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW . LexToken(LParenthesis,'(',17,130)
+   yacc.py: 445:Action : Shift and goto state 39
+   yacc.py: 410:
+   yacc.py: 411:State  : 39
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis . LexToken(PENSIZE,'penSize',17,131)
+   yacc.py: 445:Action : Shift and goto state 51
+   yacc.py: 410:
+   yacc.py: 411:State  : 51
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE . LexToken(Colon,':',17,138)
+   yacc.py: 445:Action : Shift and goto state 57
+   yacc.py: 410:
+   yacc.py: 411:State  : 57
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon . LexToken(Integer,10,17,139)
    yacc.py: 445:Action : Shift and goto state 64
    yacc.py: 410:
    yacc.py: 411:State  : 64
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR Colon . LexToken(WHITE,'white',16,146)
-   yacc.py: 445:Action : Shift and goto state 30
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon Integer . LexToken(PX,'px',17,141)
+   yacc.py: 445:Action : Shift and goto state 70
    yacc.py: 410:
-   yacc.py: 411:State  : 30
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR Colon WHITE . LexToken(RParenthesis,')',16,151)
-   yacc.py: 471:Action : Reduce rule [Color -> WHITE] with ['white'] and goto state 68
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 411:State  : 70
+   yacc.py: 430:Defaulted state 70: Reduce using 25
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PENSIZE Colon Integer PX . None
+   yacc.py: 471:Action : Reduce rule [PenSize -> PENSIZE Colon Integer PX] with ['penSize',':',10,'px'] and goto state 50
+   yacc.py: 506:Result : <tuple @ 0x3202ee0> ((10, 'px'))
    yacc.py: 410:
-   yacc.py: 411:State  : 68
-   yacc.py: 430:Defaulted state 68: Reduce using 25
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR Colon Color . LexToken(RParenthesis,')',16,151)
-   yacc.py: 471:Action : Reduce rule [PenColor -> PENCOLOR Colon Color] with ['penColor',':',None] and goto state 57
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 411:State  : 50
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize . LexToken(PENCOLOR,'penColor',17,144)
+   yacc.py: 445:Action : Shift and goto state 56
    yacc.py: 410:
-   yacc.py: 411:State  : 57
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor . LexToken(RParenthesis,')',16,151)
+   yacc.py: 411:State  : 56
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR . LexToken(Colon,':',17,152)
    yacc.py: 445:Action : Shift and goto state 63
    yacc.py: 410:
    yacc.py: 411:State  : 63
-   yacc.py: 430:Defaulted state 63: Reduce using 23
-   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor RParenthesis . None
-   yacc.py: 471:Action : Reduce rule [Draw -> LParenthesis PenSize PenColor RParenthesis] with ['(',None,None,')'] and goto state 40
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR Colon . LexToken(WHITE,'WHITE',17,153)
+   yacc.py: 445:Action : Shift and goto state 30
    yacc.py: 410:
-   yacc.py: 411:State  : 40
-   yacc.py: 430:Defaulted state 40: Reduce using 1
+   yacc.py: 411:State  : 30
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR Colon WHITE . LexToken(ANIMATION,'animation',17,159)
+   yacc.py: 471:Action : Reduce rule [Color -> WHITE] with ['WHITE'] and goto state 69
+   yacc.py: 506:Result : <str @ 0x320f300> ('WHITE')
+   yacc.py: 410:
+   yacc.py: 411:State  : 69
+   yacc.py: 430:Defaulted state 69: Reduce using 26
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PENCOLOR Colon Color . LexToken(ANIMATION,'animation',17,159)
+   yacc.py: 471:Action : Reduce rule [PenColor -> PENCOLOR Colon Color] with ['penColor',':','WHITE'] and goto state 55
+   yacc.py: 506:Result : <str @ 0x320f300> ('WHITE')
+   yacc.py: 410:
+   yacc.py: 411:State  : 55
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor . LexToken(ANIMATION,'animation',17,159)
+   yacc.py: 445:Action : Shift and goto state 62
+   yacc.py: 410:
+   yacc.py: 411:State  : 62
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor ANIMATION . LexToken(Colon,':',17,168)
+   yacc.py: 445:Action : Shift and goto state 68
+   yacc.py: 410:
+   yacc.py: 411:State  : 68
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor ANIMATION Colon . LexToken(true,'true',17,169)
+   yacc.py: 445:Action : Shift and goto state 74
+   yacc.py: 410:
+   yacc.py: 411:State  : 74
+   yacc.py: 430:Defaulted state 74: Reduce using 2
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor ANIMATION Colon true . None
+   yacc.py: 471:Action : Reduce rule [Bool -> true] with ['true'] and goto state 73
+   yacc.py: 506:Result : <str @ 0x320f280> ('true')
+   yacc.py: 410:
+   yacc.py: 411:State  : 73
+   yacc.py: 430:Defaulted state 73: Reduce using 27
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor ANIMATION Colon Bool . None
+   yacc.py: 471:Action : Reduce rule [Animation -> ANIMATION Colon Bool] with ['animation',':','true'] and goto state 61
+   yacc.py: 506:Result : <str @ 0x320f280> ('true')
+   yacc.py: 410:
+   yacc.py: 411:State  : 61
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor Animation . LexToken(RParenthesis,')',17,173)
+   yacc.py: 445:Action : Shift and goto state 67
+   yacc.py: 410:
+   yacc.py: 411:State  : 67
+   yacc.py: 430:Defaulted state 67: Reduce using 24
+   yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW LParenthesis PenSize PenColor Animation RParenthesis . None
+   yacc.py: 471:Action : Reduce rule [Draw -> LParenthesis PenSize PenColor Animation RParenthesis] with ['(',(10, 'px'),'WHITE','true',')'] and goto state 38
+   yacc.py: 506:Result : <list @ 0x32078f0> ([(10, 'px'), 'WHITE', 'true'])
+   yacc.py: 410:
+   yacc.py: 411:State  : 38
+   yacc.py: 430:Defaulted state 38: Reduce using 1
    yacc.py: 435:Stack  : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw . None
-   yacc.py: 471:Action : Reduce rule [Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw] with ['def','canvas',None,'def','structures',None,'def','draw',None] and goto state 1
-   yacc.py: 506:Result : <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 471:Action : Reduce rule [Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw] with ['def','canvas',<list @ 0x3207968>,'def','structures',<list @ 0x3207918>,'def','draw',<list @ 0x32078f0>] and goto state 1
+   yacc.py: 506:Result : <NoneType @ 0x689d7b14> (None)
    yacc.py: 410:
    yacc.py: 411:State  : 1
    yacc.py: 435:Stack  : Func . $end
-   yacc.py: 571:Done   : Returning <NoneType @ 0x7b41fba0> (None)
+   yacc.py: 571:Done   : Returning <NoneType @ 0x689d7b14> (None)
    yacc.py: 572:PLY: PARSE DEBUG END

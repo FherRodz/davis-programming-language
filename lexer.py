@@ -4,7 +4,7 @@ import sys
 tokens = [
     'Digit', 'LParenthesis', 'RParenthesis',
     'LBracket', 'RBracket', 'Comma', 'Colon',
-    'LessThan', 'GreaterThan',
+    'LessThan', 'GreaterThan', 'Integer', 'Array'
 ]
 
 reservedWords = {
@@ -78,6 +78,31 @@ def t_DATASTRUCTURES(t):
     r'queue | stack | arrayStructure | doublyLinkedList | binarySearchTree'
     if t.value in dataStructures:
         t.type = dataStructures[t.value]
+    return t
+
+def t_Integer(t):
+    r'\d+'
+    t.value = int(t.value)
+    return t
+
+def t_Array(t):
+    r'\[[0-9,]+[0-9]*\]'
+    temp = t.value
+    temp = temp.split(',')
+
+    for i in temp:
+        if(i.find('[') == 0):
+            temp[temp.index(i)] = i.replace('[', '')     
+        elif(i.find(']') == 1):
+            temp[temp.index(i)] = i.replace(']', '')
+    
+    temp_list = list()
+
+    for i in temp:
+        temp_list.append(i)
+
+    t.value = temp_list
+    print(t.value)
     return t
 
 def t_newline(t):
