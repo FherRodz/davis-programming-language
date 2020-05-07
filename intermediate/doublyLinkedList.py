@@ -32,10 +32,17 @@ class Node:
 
 
 class DoublyLinkedList:
-    def __init__(self):
+    def __init__(self, data, animation, dimensions, bgColor, penColor, penSize, position):
         super().__init__()
         self.head = Node()
         self.size = 0
+        self.data = data
+        self.dimensions = dimensions
+        self.animation = animation
+        self.bgColor = bgColor
+        self.penColor = penColor
+        self.penSize = penSize
+        self.position = position
 
     def add(self, element) -> int:
         new_node = Node(data=element)
@@ -167,19 +174,37 @@ class DoublyLinkedList:
 
         return atr
 
+    def fillFromArr(self, arr):
+        for  val in arr:
+            self.add(val)
+            
+    def setAnimation(self, ani):
+        if not ani:
+            tut.tracer(20,0)
+        else:
+            tut.tracer(1,5)
+
     def draw(self):
-        tut.setup(1500, 700)
+        tut.bgcolor(self.bgColor)
+        tut.setup(self.dimensions[0], self.dimensions[1], self.position[0], self.position[1])
         pen = tut.Pen()
         tut.hideturtle()
-
+        pen.pencolor(self.penColor)
+        pen.pensize(self.penSize[0])
+        self.setAnimation(self.animation)
+        
+        
+        self.fillFromArr(self.data)
+        print(self.getSize())
+        
         startingX = -len(str(self.getSize()))*470
 
         pen.penup()
         pen.goto(startingX, 20)
         pen.pendown()
 
-        h = 40
-        w = 100  # 60pi values, 20pi for prev & next
+        h = 40 + self.penSize[0]
+        w = 100 + self.penSize[0] # 60pi values, 20pi for prev & next
 
         # Head Node with the prev symbol of null
 
@@ -194,7 +219,7 @@ class DoublyLinkedList:
         pen.forward(w)
 
         # tracing prev
-        pen.backward(20)
+        pen.backward(h/2)
         pen.left(90)
         pen.forward(h)
         pen.backward(h)
@@ -216,7 +241,7 @@ class DoublyLinkedList:
         pen.backward(5)
 
         # tracing prev data
-        pen.goto(startingX, 20)
+        pen.goto(startingX, h/2-self.penSize[0])
         pen.left(90)
         pen.forward(10)
         pen.right(90)
@@ -230,7 +255,7 @@ class DoublyLinkedList:
         pen.write("v", False, align='center')
 
         # tracing next data
-        pen.goto(startingX, 20)
+        pen.goto(startingX-self.penSize[0]/2, h/2-self.penSize[0]-1)
         pen.left(90)
         pen.forward(w-10)
         pen.right(90)
@@ -244,6 +269,7 @@ class DoublyLinkedList:
         pen.write("t", False, align='center')
 
         # arrow
+        pen.pensize(self.penSize[0]/3)
         pen.goto(startingX, 0)
         pen.pendown()
         pen.right(90)
@@ -267,7 +293,9 @@ class DoublyLinkedList:
         pen.up()
 
         # arrow prev
-        pen.goto(startingX, 20)
+        # pen.goto(startingX, 20)
+        pen.goto(startingX+self.penSize[0]/2, 20)
+
         pen.backward(w)
         pen.left(90)
         pen.forward(11)
@@ -301,7 +329,7 @@ class DoublyLinkedList:
         pen.backward(h-11)
         pen.left(90)
         pen.down()
-
+        pen.pensize(self.penSize[0])
         # rest of the nodes in the dll
         for i in range(0, self.getSize()+1):
             startingX += (w + 30)
@@ -320,7 +348,7 @@ class DoublyLinkedList:
             pen.forward(w)
 
             # tracing prev
-            pen.backward(20)
+            pen.backward(h/2)
             pen.left(90)
             pen.forward(h)
             pen.backward(h)
@@ -342,7 +370,7 @@ class DoublyLinkedList:
             pen.backward(5)
 
             # tracing prev data
-            pen.goto(startingX, 20)
+            pen.goto(startingX, h/2-self.penSize[0])
             pen.left(90)
             pen.forward(10)
             pen.right(90)
@@ -356,7 +384,7 @@ class DoublyLinkedList:
             pen.write("v", False, align='center')
 
             # tracing next data
-            pen.goto(startingX, 20)
+            pen.goto(startingX-self.penSize[0]/2, h/2-self.penSize[0]-1)
             pen.left(90)
             pen.forward(w-10)
             pen.right(90)
@@ -369,11 +397,12 @@ class DoublyLinkedList:
             pen.forward(9)
             pen.write("t", False, align='center')
 
+            pen.pensize(self.penSize[0]/3)
             if i == self.getSize():
                 # arrow
                 #esquina superior derecha
                 pen.up()
-                pen.goto(startingX, 20)
+                pen.goto(startingX, h/2)
                 pen.right(90) #mirando a la izquierda
                 pen.backward(w)
 
@@ -404,7 +433,7 @@ class DoublyLinkedList:
 
             else:
                 # arrow prev
-                pen.goto(startingX, 20)
+                pen.goto(startingX+self.penSize[0]/2, 20)
                 pen.right(90)
                 pen.backward(w)
                 pen.left(90)
@@ -439,7 +468,11 @@ class DoublyLinkedList:
                 pen.backward(h-11)
                 pen.left(90)
                 pen.down()
-
+                pen.pensize(self.penSize[0])
+        pen.up()
+        pen.goto(self.dimensions[0], self.dimensions[1])
+        tut.exitonclick()
+        
 
 
 if __name__ == "__main__":

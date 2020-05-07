@@ -1,9 +1,16 @@
 import turtle as tut
 
 class Queue:
-    def __init__(self):
+    def __init__(self, data, animation, dimensions, bgColor, penColor, penSize, position):
         super().__init__()
         self._queue = []
+        self.data = data
+        self.animation = animation
+        self.dimensions = dimensions
+        self.bgColor = bgColor
+        self.penColor = penColor
+        self.penSize = penSize
+        self.position = position
 
     def getSize(self) -> int:
         return len(self._queue)
@@ -41,21 +48,37 @@ class Queue:
             arr.append(i)
 
         return arr
+    
+    def fillFromArr(self, data):
+        for val in data:
+            self.enqueue(val)
+
+    def setAnimation(self, ani):
+        if not ani:
+            tut.tracer(20, 0)
+        else:
+            tut.tracer(1, 5)
 
     def draw(self):
-        tut.setup(400,400)
+        tut.bgcolor(self.bgColor)
+        tut.setup(self.dimensions[0], self.dimensions[1], self.position[0], self.position[1])
         pen = tut.Pen()
+        tut.hideturtle()
+        pen.color(self.penColor)
+        pen.pensize(self.penSize[0])
+        self.setAnimation(self.animation)
         
         pen.penup()
         pen.goto(-self.getSize()*7,20)
         pen.pendown()
         
+        self.fillFromArr(self.data)
         for i in range(0,self.getSize()):
             
             startingX = pen.xcor()
             #width of the square and height
-            w = 40
-            h = 40
+            w = 40 + self.penSize[0]
+            h = 40 + self.penSize[0]
             if len(str(self._queue[i])) > 1:
                 w += (len(str(self._queue[i])) - 1) * 3
                 
@@ -93,6 +116,9 @@ class Queue:
             pen.goto(startingX + w, pen.ycor())
             pen.pendown()
 
+        pen.up()
+        pen.goto(self.dimensions[0], self.dimensions[1])
+        tut.exitonclick()
 
 if __name__ == "__main__":
     data = [1, 2, 3, 4, 5]

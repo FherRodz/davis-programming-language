@@ -164,29 +164,45 @@ while True:
     break
 
 
-structure=funcDic['structures'][0]
-structureValue=funcDic['structures'][1]
+################################
+##CONNECTING INTERMIDEATE CODE##
+################################
+structureDimen = funcDic['canvas'][0]   # dimensions of the screen
+bgColor = funcDic['canvas'][1].lower()
+strucPos = funcDic['canvas'][2]         # tuple (x,y) x=pixels from left fo screen, y=pixels from top of screen
+structure=funcDic['structures'][0]      # type of data structures
+structureValue=funcDic['structures'][1] # data (list)
+penSize = funcDic['draw'][0]            # (int, str)
+penColor = funcDic['draw'][1].lower()
+structureAni = funcDic['draw'][2]       # animation
+
+# In our language the syntax is lowercase but in and string
+# but python uses a difrent syntax here we change that
+if structureAni == 'true':
+    structureAni = True
+else:
+    structureAni = False
+
 if structure=='queue':
     queueValue=structureValue[1]
-    queue=queue.Queue()
-    for val in queueValue:
-        queue.enqueue(val)
+    queue=queue.Queue(queueValue, structureAni, structureDimen, bgColor, penColor, penSize, strucPos)
+
     queue.draw()
+    
 elif structure=='arrayStructure':
     arrayVal=structureValue[1]
-    array=array.myArray(arrayVal)
+    array=array.myArray(arrayVal, structureAni, structureDimen, bgColor, penColor, penSize, strucPos)
     array.draw()
+    
 elif structure=="stack":
     stackVal=structureValue[1]
-    stack=stack.myStack()
-    for val in stackVal:
-        stack.push(val)
+    stack=stack.myStack(stackVal, structureAni, structureDimen, bgColor, penColor, penSize, strucPos)
     stack.draw()
 else:
     dllVal=structureValue[1]
-    dll=doublyLinkedList.DoublyLinkedList()
-    for val in dllVal:
-        dll.add(val)
+    dll=doublyLinkedList.DoublyLinkedList(dllVal, structureAni, structureDimen, bgColor, penColor, penSize, strucPos)
+    # for val in dllVal:
+    #     dll.add(val)
     dll.draw()
 
 
