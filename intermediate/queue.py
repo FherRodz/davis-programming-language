@@ -43,7 +43,7 @@ class Queue:
         return arr
 
     def draw(self):
-        tut.setup(1500,700)
+        tut.setup(400,400)
         pen = tut.Pen()
         
         pen.penup()

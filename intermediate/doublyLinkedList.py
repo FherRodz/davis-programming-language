@@ -172,10 +172,6 @@ class DoublyLinkedList:
         pen = tut.Pen()
         tut.hideturtle()
 
-        print("pen positon: " + str(pen.pos()))
-        print("canvaz dimensions: " + "(" + str(tut.window_width()) +
-              "," + str(tut.window_height()) + ")")
-
         startingX = -len(str(self.getSize()))*470
 
         pen.penup()

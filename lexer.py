@@ -1,5 +1,6 @@
 from ply import lex as lex
 import sys
+from main import load_data
 
 tokens = [
     'Digit', 'LParenthesis', 'RParenthesis',
@@ -8,22 +9,22 @@ tokens = [
 ]
 
 reservedWords = {
-        'true' : 'true',
-        'false' : 'false',
-        'def' : 'DEF',
-        'canvas' : 'CANVAS',
-        'structures' : 'STRUCTURES',
-        'draw' : 'DRAW',
-        'dimensions' :  'DIMENSIONS',
-        'bgColor' : 'BGCOLOR',
-        'position' : 'POSITION',
-        'struct' : 'STRUCT',
-        'data' : 'DATA',
-        'int' : 'INT',
-        'penSize' : 'PENSIZE',
-        'px': 'PX',
-        'penColor' : 'PENCOLOR',
-        'animation' : 'ANIMATION',
+    'true' : 'true',
+    'false' : 'false',
+    'def' : 'DEF',
+    'canvas' : 'CANVAS',
+    'structures' : 'STRUCTURES',
+    'draw' : 'DRAW',
+    'dimensions' :  'DIMENSIONS',
+    'bgColor' : 'BGCOLOR',
+    'position' : 'POSITION',
+    'struct' : 'STRUCT',
+    'data' : 'DATA',
+    'int' : 'INT',
+    'penSize' : 'PENSIZE',
+    'px': 'PX',
+    'penColor' : 'PENCOLOR',
+    'animation' : 'ANIMATION',
 
 
 }
@@ -92,17 +93,16 @@ def t_Array(t):
 
     for i in temp:
         if(i.find('[') == 0):
-            temp[temp.index(i)] = i.replace('[', '')     
+            temp[temp.index(i)] = i.replace('[', '')
         elif(i.find(']') == 1):
             temp[temp.index(i)] = i.replace(']', '')
-    
+
     temp_list = list()
 
     for i in temp:
-        temp_list.append(i)
+        temp_list.append(int(i))
 
     t.value = temp_list
-    print(t.value)
     return t
 
 def t_newline(t):
@@ -113,31 +113,10 @@ def t_error(t):
     print('Illegal characters!')
     t.lexer.skip(1)
 
-
-test = '''
-def canvas(
-    dimensions:<400,400>
-    bgColor:BLACK
-    position:<500,700>
-)
-
-def structures(
-    struct:queue
-    data:<int, [10,7,5,3,1,0]>
-)
-
-def draw(
-    penSize:10px
-    penColor:WHITE
-    animation:false
-) '''
-
 lexer = lex.lex()
-lexer.input(test)
-
+lexer.input(load_data("test.davis"))
 
 while True:
     tok = lexer.token()
     if not tok:
         break
-    print(tok)

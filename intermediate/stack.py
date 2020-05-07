@@ -28,11 +28,9 @@ class myStack:
         print("\n")
         
     def draw(self):
-        tut.setup(1500, 700)
+        tut.setup(400, 400)
         pen = tut.Pen()
         tut.hideturtle()
-
-        print("pen positon: " + str(pen.pos()))
 
         pen.penup()
         pen.goto(-len(str(self.data))*7, 20)
@@ -62,8 +60,6 @@ class myStack:
             pen.forward(h)
             pen.left(90)
             pen.forward(w)
-            print("drawing element: " +
-                  str(self.data[i])+" at positon: "+str(pen.pos()))
 
             #drawing data into square
             pen.penup()
@@ -86,19 +82,10 @@ if __name__ == "__main__":
     data = [1, 2, 3, 4, 5]
     
     myStack = myStack()
-    # print("The stack should be empty and returned "+str(myStack.isEmpty())+" and shouldve returned True \n")
     for i in data:
         myStack.push(i)
         tut.clearscreen()
         myStack.draw()
-    # print("Stack after added numbers 1 through 5: \n size: "+str(myStack.size()))    
-    #myStack.printStack()
-    #print("Stack after popping "+str(myStack.pop()) +
-          #" from the stack: \n size: "+str(myStack.size()))
-    #myStack.printStack()
-    #print("Stack after popping "+str(myStack.pop()) +
-          #" from the stack: \n size: "+str(myStack.size()))
-    #myStack.printStack()
-    
+
     tut.exitonclick()
     

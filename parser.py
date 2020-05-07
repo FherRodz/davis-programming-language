@@ -1,6 +1,8 @@
 import ply.yacc as Yacc #parser generator
 from lexer import tokens
 import logging
+from intermediate import queue,array,doublyLinkedList,stack
+from main import load_data
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -15,17 +17,12 @@ logging.basicConfig(
 funcDic = dict()
 
 def p_Func(p):
-    """
-
+    '''
         Func : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw
-    """
+    '''
     funcDic[p[2]] = p[3]
     funcDic[p[5]] = p[6]
     funcDic[p[8]] = p[9]
-    # Test para saber si los elementos se estan andiendo al dicc
-    print("Diccionario")
-    print(funcDic)
-
 
 # def p_Def(p):
 #     '''
@@ -158,11 +155,41 @@ def p_error(p):
 parser = Yacc.yacc()
 log = logging.getLogger()
 
-print(funcDic)
-
 while True:
     try:
-        s = input('')
+        s = load_data('test.davis')
     except EOFError:
         break
     parser.parse(s, debug=log)
+    break
+
+
+structure=funcDic['structures'][0]
+structureValue=funcDic['structures'][1]
+if structure=='queue':
+    queueValue=structureValue[1]
+    queue=queue.Queue()
+    for val in queueValue:
+        queue.enqueue(val)
+    queue.draw()
+elif structure=='arrayStructure':
+    arrayVal=structureValue[1]
+    array=array.myArray(arrayVal)
+    array.draw()
+elif structure=="stack":
+    stackVal=structureValue[1]
+    stack=stack.myStack()
+    for val in stackVal:
+        stack.push(val)
+    stack.draw()
+else:
+    dllVal=structureValue[1]
+    dll=doublyLinkedList.DoublyLinkedList()
+    for val in dllVal:
+        dll.add(val)
+    dll.draw()
+
+
+# {'canvas': [(400, 400), 'BLACK', (500, 700)],
+# 'structures': ['queue', ('int', ['10', '7', '5', '3', '1', '0'])],
+# 'draw': [(10, 'px'), 'WHITE', 'true']}
