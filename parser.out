@@ -32,15 +32,18 @@ Rule 21    Data -> DATA Colon LessThan Type Comma Arr GreaterThan
 Rule 22    Type -> INT
 Rule 23    Arr -> Array
 Rule 24    Draw -> LParenthesis PenSize PenColor Animation RParenthesis
-Rule 25    PenSize -> PENSIZE Colon Integer PX
-Rule 26    PenColor -> PENCOLOR Colon Color
-Rule 27    Animation -> ANIMATION Colon Bool
-Rule 28    Int -> Digit
-Rule 29    Int -> Digit Integer
+Rule 25    Draw -> LParenthesis PenSize PenColor Animation StructureOp RParenthesis
+Rule 26    StructureOp -> STRUCTUREOP
+Rule 27    StructureOp -> <empty>
+Rule 28    PenSize -> PENSIZE Colon Integer PX
+Rule 29    PenColor -> PENCOLOR Colon Color
+Rule 30    Animation -> ANIMATION Colon Bool
+Rule 31    Int -> Digit
+Rule 32    Int -> Digit Integer
 
 Terminals, with rules where they appear
 
-ANIMATION            : 27
+ANIMATION            : 30
 ARRAY                : 18
 Array                : 23
 BGCOLOR              : 6
@@ -48,31 +51,32 @@ BLACK                : 7
 BLUE                 : 8
 BST                  : 20
 CANVAS               : 1
-Colon                : 5 6 13 15 21 25 26 27
+Colon                : 5 6 13 15 21 28 29 30
 Comma                : 5 13 21
 DATA                 : 21
 DEF                  : 1 1 1
 DIMENSIONS           : 5
 DLL                  : 19
 DRAW                 : 1
-Digit                : 28 29
+Digit                : 31 32
 GREEN                : 11
 GreaterThan          : 5 13 21
 INT                  : 22
-Integer              : 5 5 13 13 25 29
+Integer              : 5 5 13 13 28 32
 LBracket             : 
-LParenthesis         : 4 14 24
+LParenthesis         : 4 14 24 25
 LessThan             : 5 13 21
-PENCOLOR             : 26
-PENSIZE              : 25
+PENCOLOR             : 29
+PENSIZE              : 28
 POSITION             : 13
-PX                   : 25
+PX                   : 28
 QUEUE                : 16
 RBracket             : 
 RED                  : 10
-RParenthesis         : 4 14 24
+RParenthesis         : 4 14 24 25
 STACK                : 17
 STRUCT               : 15
+STRUCTUREOP          : 26
 STRUCTURES           : 1
 WHITE                : 12
 YELLOW               : 9
@@ -82,23 +86,24 @@ true                 : 2
 
 Nonterminals, with rules where they appear
 
-Animation            : 24
+Animation            : 24 25
 Arr                  : 21
 BgColor              : 4
-Bool                 : 27
+Bool                 : 30
 Canvas               : 1
-Color                : 6 26
+Color                : 6 29
 DS                   : 15
 Data                 : 14
 Dimensions           : 4
 Draw                 : 1
 Func                 : 0
 Int                  : 
-PenColor             : 24
-PenSize              : 24
+PenColor             : 24 25
+PenSize              : 24 25
 Position             : 4
 Struct               : 14
 Structure            : 1
+StructureOp          : 25
 Type                 : 21
 
 Parsing method: LALR
@@ -364,6 +369,7 @@ state 32
 
     (1) Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW . Draw
     (24) Draw -> . LParenthesis PenSize PenColor Animation RParenthesis
+    (25) Draw -> . LParenthesis PenSize PenColor Animation StructureOp RParenthesis
 
     LParenthesis    shift and go to state 39
 
@@ -424,7 +430,8 @@ state 38
 state 39
 
     (24) Draw -> LParenthesis . PenSize PenColor Animation RParenthesis
-    (25) PenSize -> . PENSIZE Colon Integer PX
+    (25) Draw -> LParenthesis . PenSize PenColor Animation StructureOp RParenthesis
+    (28) PenSize -> . PENSIZE Colon Integer PX
 
     PENSIZE         shift and go to state 51
 
@@ -503,7 +510,8 @@ state 49
 state 50
 
     (24) Draw -> LParenthesis PenSize . PenColor Animation RParenthesis
-    (26) PenColor -> . PENCOLOR Colon Color
+    (25) Draw -> LParenthesis PenSize . PenColor Animation StructureOp RParenthesis
+    (29) PenColor -> . PENCOLOR Colon Color
 
     PENCOLOR        shift and go to state 56
 
@@ -511,7 +519,7 @@ state 50
 
 state 51
 
-    (25) PenSize -> PENSIZE . Colon Integer PX
+    (28) PenSize -> PENSIZE . Colon Integer PX
 
     Colon           shift and go to state 57
 
@@ -542,7 +550,8 @@ state 54
 state 55
 
     (24) Draw -> LParenthesis PenSize PenColor . Animation RParenthesis
-    (27) Animation -> . ANIMATION Colon Bool
+    (25) Draw -> LParenthesis PenSize PenColor . Animation StructureOp RParenthesis
+    (30) Animation -> . ANIMATION Colon Bool
 
     ANIMATION       shift and go to state 62
 
@@ -550,14 +559,14 @@ state 55
 
 state 56
 
-    (26) PenColor -> PENCOLOR . Colon Color
+    (29) PenColor -> PENCOLOR . Colon Color
 
     Colon           shift and go to state 63
 
 
 state 57
 
-    (25) PenSize -> PENSIZE Colon . Integer PX
+    (28) PenSize -> PENSIZE Colon . Integer PX
 
     Integer         shift and go to state 64
 
@@ -586,20 +595,28 @@ state 60
 state 61
 
     (24) Draw -> LParenthesis PenSize PenColor Animation . RParenthesis
+    (25) Draw -> LParenthesis PenSize PenColor Animation . StructureOp RParenthesis
+    (26) StructureOp -> . STRUCTUREOP
+    (27) StructureOp -> .
 
+  ! shift/reduce conflict for RParenthesis resolved as shift
     RParenthesis    shift and go to state 67
+    STRUCTUREOP     shift and go to state 69
 
+  ! RParenthesis    [ reduce using rule 27 (StructureOp -> .) ]
+
+    StructureOp                    shift and go to state 68
 
 state 62
 
-    (27) Animation -> ANIMATION . Colon Bool
+    (30) Animation -> ANIMATION . Colon Bool
 
-    Colon           shift and go to state 68
+    Colon           shift and go to state 70
 
 
 state 63
 
-    (26) PenColor -> PENCOLOR Colon . Color
+    (29) PenColor -> PENCOLOR Colon . Color
     (7) Color -> . BLACK
     (8) Color -> . BLUE
     (9) Color -> . YELLOW
@@ -614,13 +631,13 @@ state 63
     GREEN           shift and go to state 29
     WHITE           shift and go to state 30
 
-    Color                          shift and go to state 69
+    Color                          shift and go to state 71
 
 state 64
 
-    (25) PenSize -> PENSIZE Colon Integer . PX
+    (28) PenSize -> PENSIZE Colon Integer . PX
 
-    PX              shift and go to state 70
+    PX              shift and go to state 72
 
 
 state 65
@@ -628,9 +645,9 @@ state 65
     (21) Data -> DATA Colon LessThan Type Comma . Arr GreaterThan
     (23) Arr -> . Array
 
-    Array           shift and go to state 72
+    Array           shift and go to state 74
 
-    Arr                            shift and go to state 71
+    Arr                            shift and go to state 73
 
 state 66
 
@@ -648,67 +665,95 @@ state 67
 
 state 68
 
-    (27) Animation -> ANIMATION Colon . Bool
-    (2) Bool -> . true
-    (3) Bool -> . false
+    (25) Draw -> LParenthesis PenSize PenColor Animation StructureOp . RParenthesis
 
-    true            shift and go to state 74
-    false           shift and go to state 75
+    RParenthesis    shift and go to state 75
 
-    Bool                           shift and go to state 73
 
 state 69
 
-    (26) PenColor -> PENCOLOR Colon Color .
+    (26) StructureOp -> STRUCTUREOP .
 
-    ANIMATION       reduce using rule 26 (PenColor -> PENCOLOR Colon Color .)
+    RParenthesis    reduce using rule 26 (StructureOp -> STRUCTUREOP .)
 
 
 state 70
 
-    (25) PenSize -> PENSIZE Colon Integer PX .
+    (30) Animation -> ANIMATION Colon . Bool
+    (2) Bool -> . true
+    (3) Bool -> . false
 
-    PENCOLOR        reduce using rule 25 (PenSize -> PENSIZE Colon Integer PX .)
+    true            shift and go to state 77
+    false           shift and go to state 78
 
+    Bool                           shift and go to state 76
 
 state 71
 
-    (21) Data -> DATA Colon LessThan Type Comma Arr . GreaterThan
+    (29) PenColor -> PENCOLOR Colon Color .
 
-    GreaterThan     shift and go to state 76
+    ANIMATION       reduce using rule 29 (PenColor -> PENCOLOR Colon Color .)
 
 
 state 72
+
+    (28) PenSize -> PENSIZE Colon Integer PX .
+
+    PENCOLOR        reduce using rule 28 (PenSize -> PENSIZE Colon Integer PX .)
+
+
+state 73
+
+    (21) Data -> DATA Colon LessThan Type Comma Arr . GreaterThan
+
+    GreaterThan     shift and go to state 79
+
+
+state 74
 
     (23) Arr -> Array .
 
     GreaterThan     reduce using rule 23 (Arr -> Array .)
 
 
-state 73
+state 75
 
-    (27) Animation -> ANIMATION Colon Bool .
+    (25) Draw -> LParenthesis PenSize PenColor Animation StructureOp RParenthesis .
 
-    RParenthesis    reduce using rule 27 (Animation -> ANIMATION Colon Bool .)
+    $end            reduce using rule 25 (Draw -> LParenthesis PenSize PenColor Animation StructureOp RParenthesis .)
 
 
-state 74
+state 76
+
+    (30) Animation -> ANIMATION Colon Bool .
+
+    RParenthesis    reduce using rule 30 (Animation -> ANIMATION Colon Bool .)
+    STRUCTUREOP     reduce using rule 30 (Animation -> ANIMATION Colon Bool .)
+
+
+state 77
 
     (2) Bool -> true .
 
     RParenthesis    reduce using rule 2 (Bool -> true .)
+    STRUCTUREOP     reduce using rule 2 (Bool -> true .)
 
 
-state 75
+state 78
 
     (3) Bool -> false .
 
     RParenthesis    reduce using rule 3 (Bool -> false .)
+    STRUCTUREOP     reduce using rule 3 (Bool -> false .)
 
 
-state 76
+state 79
 
     (21) Data -> DATA Colon LessThan Type Comma Arr GreaterThan .
 
     RParenthesis    reduce using rule 21 (Data -> DATA Colon LessThan Type Comma Arr GreaterThan .)
 
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for RParenthesis in state 61 resolved as shift

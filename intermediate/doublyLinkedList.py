@@ -193,9 +193,7 @@ class DoublyLinkedList:
         pen.pensize(self.penSize[0])
         self.setAnimation(self.animation)
         
-        
         self.fillFromArr(self.data)
-        print(self.getSize())
         
         startingX = -len(str(self.getSize()))*470
 

@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'ANIMATION ARRAY Array BGCOLOR BLACK BLUE BST CANVAS Colon Comma DATA DEF DIMENSIONS DLL DRAW Digit GREEN GreaterThan INT Integer LBracket LParenthesis LessThan PENCOLOR PENSIZE POSITION PX QUEUE RBracket RED RParenthesis STACK STRUCT STRUCTURES WHITE YELLOW false true\n        Func : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw\n    \n        Bool : true\n             | false\n    \n        Canvas : LParenthesis Dimensions BgColor Position RParenthesis\n    \n        Dimensions : DIMENSIONS Colon LessThan Integer Comma Integer GreaterThan\n    \n        BgColor : BGCOLOR Colon Color\n    \n        Color : BLACK\n              | BLUE\n              | YELLOW\n              | RED\n              | GREEN\n              | WHITE\n    \n        Position : POSITION Colon LessThan Integer Comma Integer GreaterThan\n    \n        Structure : LParenthesis Struct Data RParenthesis\n    \n        Struct : STRUCT Colon DS\n    \n        DS : QUEUE\n           | STACK\n           | ARRAY\n           | DLL\n           | BST\n    \n        Data : DATA Colon LessThan Type Comma Arr GreaterThan\n    \n        Type : INT\n    \n    Arr : Array\n    \n    Draw : LParenthesis PenSize PenColor Animation RParenthesis\n    \n    PenSize : PENSIZE Colon Integer PX\n    \n    PenColor : PENCOLOR Colon Color\n    \n    Animation : ANIMATION Colon Bool\n    \n    Int : Digit\n        | Digit Integer\n    '
+_lr_signature = 'ANIMATION ARRAY Array BGCOLOR BLACK BLUE BST CANVAS Colon Comma DATA DEF DIMENSIONS DLL DRAW Digit GREEN GreaterThan INT Integer LBracket LParenthesis LessThan PENCOLOR PENSIZE POSITION PX QUEUE RBracket RED RParenthesis STACK STRUCT STRUCTUREOP STRUCTURES WHITE YELLOW false true\n        Func : DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw\n    \n        Bool : true\n             | false\n    \n        Canvas : LParenthesis Dimensions BgColor Position RParenthesis\n    \n        Dimensions : DIMENSIONS Colon LessThan Integer Comma Integer GreaterThan\n    \n        BgColor : BGCOLOR Colon Color\n    \n        Color : BLACK\n              | BLUE\n              | YELLOW\n              | RED\n              | GREEN\n              | WHITE\n    \n        Position : POSITION Colon LessThan Integer Comma Integer GreaterThan\n    \n        Structure : LParenthesis Struct Data RParenthesis\n                  \n    \n        Struct : STRUCT Colon DS\n    \n        DS : QUEUE\n           | STACK\n           | ARRAY\n           | DLL\n           | BST\n    \n        Data : DATA Colon LessThan Type Comma Arr GreaterThan\n    \n        Type : INT\n    \n    Arr : Array\n    \n    Draw : LParenthesis PenSize PenColor Animation RParenthesis\n         | LParenthesis PenSize PenColor Animation StructureOp RParenthesis\n    \n    StructureOp : STRUCTUREOP\n                | \n    \n    PenSize : PENSIZE Colon Integer PX\n    \n    PenColor : PENCOLOR Colon Color\n    \n    Animation : ANIMATION Colon Bool\n    \n    Int : Digit\n        | Digit Integer\n    '
     
-_lr_action_items = {'DEF':([0,4,13,22,40,],[2,6,19,-4,-14,]),'$end':([1,38,67,],[0,-1,-24,]),'CANVAS':([2,],[3,]),'LParenthesis':([3,9,32,],[5,14,39,]),'DIMENSIONS':([5,],[8,]),'STRUCTURES':([6,],[9,]),'BGCOLOR':([7,54,],[11,-5,]),'Colon':([8,11,16,21,34,51,56,62,],[12,17,23,35,41,57,63,68,]),'POSITION':([10,24,25,26,27,28,29,30,],[16,-6,-7,-8,-9,-10,-11,-12,]),'LessThan':([12,23,41,],[18,36,52,]),'STRUCT':([14,],[21,]),'RParenthesis':([15,33,61,66,73,74,75,76,],[22,40,67,-13,-27,-2,-3,-21,]),'BLACK':([17,63,],[25,25,]),'BLUE':([17,63,],[26,26,]),'YELLOW':([17,63,],[27,27,]),'RED':([17,63,],[28,28,]),'GREEN':([17,63,],[29,29,]),'WHITE':([17,63,],[30,30,]),'Integer':([18,36,37,53,57,],[31,48,49,60,64,]),'DRAW':([19,],[32,]),'DATA':([20,42,43,44,45,46,47,],[34,-15,-16,-17,-18,-19,-20,]),'ANIMATION':([25,26,27,28,29,30,55,69,],[-7,-8,-9,-10,-11,-12,62,-26,]),'Comma':([31,48,58,59,],[37,53,65,-22,]),'QUEUE':([35,],[43,]),'STACK':([35,],[44,]),'ARRAY':([35,],[45,]),'DLL':([35,],[46,]),'BST':([35,],[47,]),'PENSIZE':([39,],[51,]),'GreaterThan':([49,60,71,72,],[54,66,76,-23,]),'PENCOLOR':([50,70,],[56,-25,]),'INT':([52,],[59,]),'PX':([64,],[70,]),'Array':([65,],[72,]),'true':([68,],[74,]),'false':([68,],[75,]),}
+_lr_action_items = {'DEF':([0,4,13,22,40,],[2,6,19,-4,-14,]),'$end':([1,38,67,75,],[0,-1,-24,-25,]),'CANVAS':([2,],[3,]),'LParenthesis':([3,9,32,],[5,14,39,]),'DIMENSIONS':([5,],[8,]),'STRUCTURES':([6,],[9,]),'BGCOLOR':([7,54,],[11,-5,]),'Colon':([8,11,16,21,34,51,56,62,],[12,17,23,35,41,57,63,70,]),'POSITION':([10,24,25,26,27,28,29,30,],[16,-6,-7,-8,-9,-10,-11,-12,]),'LessThan':([12,23,41,],[18,36,52,]),'STRUCT':([14,],[21,]),'RParenthesis':([15,33,61,66,68,69,76,77,78,79,],[22,40,67,-13,75,-26,-30,-2,-3,-21,]),'BLACK':([17,63,],[25,25,]),'BLUE':([17,63,],[26,26,]),'YELLOW':([17,63,],[27,27,]),'RED':([17,63,],[28,28,]),'GREEN':([17,63,],[29,29,]),'WHITE':([17,63,],[30,30,]),'Integer':([18,36,37,53,57,],[31,48,49,60,64,]),'DRAW':([19,],[32,]),'DATA':([20,42,43,44,45,46,47,],[34,-15,-16,-17,-18,-19,-20,]),'ANIMATION':([25,26,27,28,29,30,55,71,],[-7,-8,-9,-10,-11,-12,62,-29,]),'Comma':([31,48,58,59,],[37,53,65,-22,]),'QUEUE':([35,],[43,]),'STACK':([35,],[44,]),'ARRAY':([35,],[45,]),'DLL':([35,],[46,]),'BST':([35,],[47,]),'PENSIZE':([39,],[51,]),'GreaterThan':([49,60,73,74,],[54,66,79,-23,]),'PENCOLOR':([50,72,],[56,-28,]),'INT':([52,],[59,]),'STRUCTUREOP':([61,76,77,78,],[69,-30,-2,-3,]),'PX':([64,],[72,]),'Array':([65,],[74,]),'true':([70,],[77,]),'false':([70,],[78,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'Func':([0,],[1,]),'Canvas':([3,],[4,]),'Dimensions':([5,],[7,]),'BgColor':([7,],[10,]),'Structure':([9,],[13,]),'Position':([10,],[15,]),'Struct':([14,],[20,]),'Color':([17,63,],[24,69,]),'Data':([20,],[33,]),'Draw':([32,],[38,]),'DS':([35,],[42,]),'PenSize':([39,],[50,]),'PenColor':([50,],[55,]),'Type':([52,],[58,]),'Animation':([55,],[61,]),'Arr':([65,],[71,]),'Bool':([68,],[73,]),}
+_lr_goto_items = {'Func':([0,],[1,]),'Canvas':([3,],[4,]),'Dimensions':([5,],[7,]),'BgColor':([7,],[10,]),'Structure':([9,],[13,]),'Position':([10,],[15,]),'Struct':([14,],[20,]),'Color':([17,63,],[24,71,]),'Data':([20,],[33,]),'Draw':([32,],[38,]),'DS':([35,],[42,]),'PenSize':([39,],[50,]),'PenColor':([50,],[55,]),'Type':([52,],[58,]),'Animation':([55,],[61,]),'StructureOp':([61,],[68,]),'Arr':([65,],[73,]),'Bool':([70,],[76,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,33 +27,36 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> Func","S'",1,None,None,None),
-  ('Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw','Func',9,'p_Func','parser.py',20),
-  ('Bool -> true','Bool',1,'p_Bool','parser.py',37),
-  ('Bool -> false','Bool',1,'p_Bool','parser.py',38),
-  ('Canvas -> LParenthesis Dimensions BgColor Position RParenthesis','Canvas',5,'p_Canvas','parser.py',44),
-  ('Dimensions -> DIMENSIONS Colon LessThan Integer Comma Integer GreaterThan','Dimensions',7,'p_Dimensions','parser.py',50),
-  ('BgColor -> BGCOLOR Colon Color','BgColor',3,'p_BgColor','parser.py',56),
-  ('Color -> BLACK','Color',1,'p_Color','parser.py',62),
-  ('Color -> BLUE','Color',1,'p_Color','parser.py',63),
-  ('Color -> YELLOW','Color',1,'p_Color','parser.py',64),
-  ('Color -> RED','Color',1,'p_Color','parser.py',65),
-  ('Color -> GREEN','Color',1,'p_Color','parser.py',66),
-  ('Color -> WHITE','Color',1,'p_Color','parser.py',67),
-  ('Position -> POSITION Colon LessThan Integer Comma Integer GreaterThan','Position',7,'p_Position','parser.py',74),
-  ('Structure -> LParenthesis Struct Data RParenthesis','Structure',4,'p_Structure','parser.py',80),
-  ('Struct -> STRUCT Colon DS','Struct',3,'p_Struct','parser.py',86),
-  ('DS -> QUEUE','DS',1,'p_DS','parser.py',92),
-  ('DS -> STACK','DS',1,'p_DS','parser.py',93),
-  ('DS -> ARRAY','DS',1,'p_DS','parser.py',94),
-  ('DS -> DLL','DS',1,'p_DS','parser.py',95),
-  ('DS -> BST','DS',1,'p_DS','parser.py',96),
-  ('Data -> DATA Colon LessThan Type Comma Arr GreaterThan','Data',7,'p_Data','parser.py',102),
-  ('Type -> INT','Type',1,'p_Type','parser.py',108),
-  ('Arr -> Array','Arr',1,'p_Arr','parser.py',114),
-  ('Draw -> LParenthesis PenSize PenColor Animation RParenthesis','Draw',5,'p_Draw','parser.py',120),
-  ('PenSize -> PENSIZE Colon Integer PX','PenSize',4,'p_PenSize','parser.py',131),
-  ('PenColor -> PENCOLOR Colon Color','PenColor',3,'p_PenColor','parser.py',137),
-  ('Animation -> ANIMATION Colon Bool','Animation',3,'p_Animation','parser.py',143),
-  ('Int -> Digit','Int',1,'p_Int','parser.py',149),
-  ('Int -> Digit Integer','Int',2,'p_Int','parser.py',150),
+  ('Func -> DEF CANVAS Canvas DEF STRUCTURES Structure DEF DRAW Draw','Func',9,'p_Func','parser.py',21),
+  ('Bool -> true','Bool',1,'p_Bool','parser.py',34),
+  ('Bool -> false','Bool',1,'p_Bool','parser.py',35),
+  ('Canvas -> LParenthesis Dimensions BgColor Position RParenthesis','Canvas',5,'p_Canvas','parser.py',41),
+  ('Dimensions -> DIMENSIONS Colon LessThan Integer Comma Integer GreaterThan','Dimensions',7,'p_Dimensions','parser.py',47),
+  ('BgColor -> BGCOLOR Colon Color','BgColor',3,'p_BgColor','parser.py',53),
+  ('Color -> BLACK','Color',1,'p_Color','parser.py',59),
+  ('Color -> BLUE','Color',1,'p_Color','parser.py',60),
+  ('Color -> YELLOW','Color',1,'p_Color','parser.py',61),
+  ('Color -> RED','Color',1,'p_Color','parser.py',62),
+  ('Color -> GREEN','Color',1,'p_Color','parser.py',63),
+  ('Color -> WHITE','Color',1,'p_Color','parser.py',64),
+  ('Position -> POSITION Colon LessThan Integer Comma Integer GreaterThan','Position',7,'p_Position','parser.py',71),
+  ('Structure -> LParenthesis Struct Data RParenthesis','Structure',4,'p_Structure','parser.py',77),
+  ('Struct -> STRUCT Colon DS','Struct',3,'p_Struct','parser.py',84),
+  ('DS -> QUEUE','DS',1,'p_DS','parser.py',90),
+  ('DS -> STACK','DS',1,'p_DS','parser.py',91),
+  ('DS -> ARRAY','DS',1,'p_DS','parser.py',92),
+  ('DS -> DLL','DS',1,'p_DS','parser.py',93),
+  ('DS -> BST','DS',1,'p_DS','parser.py',94),
+  ('Data -> DATA Colon LessThan Type Comma Arr GreaterThan','Data',7,'p_Data','parser.py',100),
+  ('Type -> INT','Type',1,'p_Type','parser.py',106),
+  ('Arr -> Array','Arr',1,'p_Arr','parser.py',112),
+  ('Draw -> LParenthesis PenSize PenColor Animation RParenthesis','Draw',5,'p_Draw','parser.py',118),
+  ('Draw -> LParenthesis PenSize PenColor Animation StructureOp RParenthesis','Draw',6,'p_Draw','parser.py',119),
+  ('StructureOp -> STRUCTUREOP','StructureOp',1,'p_StructureOp','parser.py',128),
+  ('StructureOp -> <empty>','StructureOp',0,'p_StructureOp','parser.py',129),
+  ('PenSize -> PENSIZE Colon Integer PX','PenSize',4,'p_PenSize','parser.py',139),
+  ('PenColor -> PENCOLOR Colon Color','PenColor',3,'p_PenColor','parser.py',145),
+  ('Animation -> ANIMATION Colon Bool','Animation',3,'p_Animation','parser.py',151),
+  ('Int -> Digit','Int',1,'p_Int','parser.py',157),
+  ('Int -> Digit Integer','Int',2,'p_Int','parser.py',158),
 ]

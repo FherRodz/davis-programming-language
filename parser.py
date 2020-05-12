@@ -24,11 +24,6 @@ def p_Func(p):
     funcDic[p[5]] = p[6]
     funcDic[p[8]] = p[9]
 
-# def p_Def(p):
-#     '''
-#         Def : Exp
-#     '''
-
 def p_Bool(p):
     '''
         Bool : true
@@ -72,9 +67,10 @@ def p_Position(p):
     '''
     p[0] = (p[4], p[6])
 
-def p_Structure (p):
+def p_Structure(p):
     '''
         Structure : LParenthesis Struct Data RParenthesis
+                  
     '''
     p[0] = [p[2], p[3]]
 
@@ -115,13 +111,18 @@ def p_Arr(p):
 def p_Draw(p):
     '''
     Draw : LParenthesis PenSize PenColor Animation RParenthesis
+         | LParenthesis PenSize PenColor Animation StructureOp RParenthesis
     '''
-    p[0] = [p[2], p[3], p[4]]
+    if p[5] == "STRUCTUREOP":
+        p[0] = [p[2], p[3], p[4], funcDic['structures']]
+    else:
+        p[0] = [p[2], p[3], p[4]]
 
-# def p_Obj(p):
-#     '''
-#     Obj : OBJ Colon Exp
-#     '''
+def p_StructureOp(p):
+    '''
+    StructureOp : STRUCTUREOP
+                | 
+    '''
 
 def p_PenSize(p):
     '''
@@ -167,14 +168,25 @@ while True:
 ################################
 ##CONNECTING INTERMIDEATE CODE##
 ################################
-structureDimen = funcDic['canvas'][0]   # dimensions of the screen
-bgColor = funcDic['canvas'][1].lower()
-strucPos = funcDic['canvas'][2]         # tuple (x,y) x=pixels from left fo screen, y=pixels from top of screen
-structure=funcDic['structures'][0]      # type of data structures
-structureValue=funcDic['structures'][1] # data (list)
-penSize = funcDic['draw'][0]            # (int, str)
-penColor = funcDic['draw'][1].lower()
-structureAni = funcDic['draw'][2]       # animation
+if len(funcDic['draw']) == 3:
+    structureDimen = funcDic['canvas'][0]   # dimensions of the screen
+    bgColor = funcDic['canvas'][1].lower()
+    strucPos = funcDic['canvas'][2]         # tuple (x,y) x=pixels from left fo screen, y=pixels from top of screen
+    structure=funcDic['structures'][0]      # type of data structures
+    structureValue=funcDic['structures'][1] # data (list)
+    penSize = funcDic['draw'][0]            # (int, str)
+    penColor = funcDic['draw'][1].lower()
+    structureAni = funcDic['draw'][2]       # animation
+else:
+    structureDimen = funcDic['canvas'][0]
+    bgColor = funcDic['canvas'][1].lower()
+    strucPos = funcDic['canvas'][2]
+    structure= funcDic['draw'][4][0]
+    structureValue=funcDic['draw'][4][1]
+    penSize = funcDic['draw'][0] 
+    penColor = funcDic['draw'][1].lower()
+    structureAni = funcDic['draw'][2]
+
 
 # In our language the syntax is lowercase but in and string
 # but python uses a difrent syntax here we change that
@@ -186,7 +198,6 @@ else:
 if structure=='queue':
     queueValue=structureValue[1]
     queue=queue.Queue(queueValue, structureAni, structureDimen, bgColor, penColor, penSize, strucPos)
-
     queue.draw()
     
 elif structure=='arrayStructure':
@@ -198,12 +209,16 @@ elif structure=="stack":
     stackVal=structureValue[1]
     stack=stack.myStack(stackVal, structureAni, structureDimen, bgColor, penColor, penSize, strucPos)
     stack.draw()
-else:
+
+elif structure == "doublyLinkedList":
     dllVal=structureValue[1]
     dll=doublyLinkedList.DoublyLinkedList(dllVal, structureAni, structureDimen, bgColor, penColor, penSize, strucPos)
     # for val in dllVal:
     #     dll.add(val)
     dll.draw()
+
+else:
+    print("The disired Structured is not implemented please contact the developers")
 
 
 # {'canvas': [(400, 400), 'BLACK', (500, 700)],

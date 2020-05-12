@@ -18,6 +18,7 @@ reservedWords = {
     'dimensions' :  'DIMENSIONS',
     'bgColor' : 'BGCOLOR',
     'position' : 'POSITION',
+    'funcStructures' : 'STRUCTUREOP',
     'struct' : 'STRUCT',
     'data' : 'DATA',
     'int' : 'INT',
@@ -25,8 +26,6 @@ reservedWords = {
     'px': 'PX',
     'penColor' : 'PENCOLOR',
     'animation' : 'ANIMATION',
-
-
 }
 
 colors = {
@@ -64,7 +63,7 @@ t_Digit = r'[0-9]'
 t_ignore  = ' \t'
 
 def t_RESERVED(t):
-    r'true | false | def | canvas | structures | draw | dimensions | bgColor | position | struct | data | int | penSize  | px | penColor | animation'
+    r'true | false | def | canvas | structures | draw | dimensions | bgColor | position | funcStructures | struct | data | int | penSize  | px | penColor | animation'
     if t.value in reservedWords:
         t.type = reservedWords[t.value]
     return t
@@ -118,5 +117,6 @@ lexer.input(load_data("test.davis"))
 
 while True:
     tok = lexer.token()
+    # print(tok)
     if not tok:
         break
