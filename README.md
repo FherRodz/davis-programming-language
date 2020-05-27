@@ -6,13 +6,13 @@ One of the biggest problems students face when taking advanced programming class
 The language should be able to visualize different types of data structures.
 
 1. Easy rendition of different Data Structures graphs with easy modification of ->
-   -`=>` Dimensions
-   -`=>` Color
-   -`=>` Position
+   * => Dimensions
+   * => Color
+   * => Position
 1. The visualization should be done with only three functions -> 
-   -`=>` Canvas
-   -`=>` Structure
-   -`=>` Draw
+   * => Canvas
+   * => Structure
+   * => Draw
 
 
 ```markdown
