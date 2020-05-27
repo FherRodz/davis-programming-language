@@ -39,6 +39,9 @@ The language should be able to visualize different types of data structures.
   * Open the terminal and go to the directory of the project
   * Run `python parser.py` on your temrinal 
 
+## Demo Video | ## Commercial Video
+-----------------------------
+[https://youtu.be/B1kf4bufF1o](https://youtu.be/B1kf4bufF1o) | [link here](https://youtu.be)
 
 ## Demo Video
 [https://youtu.be/B1kf4bufF1o](https://youtu.be/B1kf4bufF1o)
