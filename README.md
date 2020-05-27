@@ -1,6 +1,6 @@
 
 # DaVis_
-## The W.H.Y
+### The W.H.Y
 
 One of the biggest problems students face when taking advanced programming classes like data structures is the visualization of abstract structures. As a result, the students’ execution fails to demonstrate their knowledge or creates an unnecessary hurdle. The implementation of a simple programming language that would help in the visualization of the structures could be of great use. That's where DaVis comes in! Working around JFrame, it is an easy way to create models used by students or professors alike in the explanation, study or transformation of data structures like circular-singly-linked-list.
 
@@ -21,7 +21,7 @@ The language should be able to visualize different types of data structures.
    * Stack
    * Queue
 
-## How to O.P.E.R.A.T.E 
+### How to O.P.E.R.A.T.E 
 1. Write or modify the three DaVis functions on the "test.davis" file
    1. Canvas
      * dimensions => two integers determining the size of the canvas screen
