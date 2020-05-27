@@ -7,19 +7,19 @@ One of the biggest problems students face when taking advanced programming class
 ### The FEAT_ure.s
 The language should be able to visualize different types of data structures.
 
-1. Easy rendition of different Data Structures graphs with easy modification of ->
-   * Dimensions
-   * Color
-   * Position
-1. The visualization should be done with only three functions -> 
-   * Canvas
-   * Structure
-   * Draw
-1. The available structure visualizations ->
-   * Array
-   * Doubly Linked List With Dummy Header
-   * Stack
-   * Queue
+> 1. Easy rendition of different Data Structures graphs with easy modification of ->
+>   * Dimensions
+>   * Color
+>   * Position
+> 1. The visualization should be done with only three functions -> 
+>   * Canvas
+>   * Structure
+>   * Draw
+> 1. The available structure visualizations ->
+>   * Array
+>   * Doubly Linked List With Dummy Header
+>   * Stack
+>   * Queue
 
 ### How to O.P.E.R.A.T.E 
 1. Write or modify the three DaVis functions on the "`test.davis`" file
