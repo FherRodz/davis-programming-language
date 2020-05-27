@@ -22,7 +22,7 @@ The language should be able to visualize different types of data structures.
    * Queue
 
 ### How to O.P.E.R.A.T.E 
-1. Write or modify the three DaVis functions on the "test.davis" file
+1. Write or modify the three DaVis functions on the "`test.davis`" file
    1. Canvas
      * dimensions => two integers determining the size of the canvas screen
      * background color (bgColor) => one of **WHITE**, **BLACK**, **GREEN**, **YELLOW**, **RED**, **BLUE** 
@@ -39,6 +39,9 @@ The language should be able to visualize different types of data structures.
   * Open the terminal and go to the directory of the project
   * Run `python parser.py` on your temrinal 
 
+
+## DEMO 
+[](https://youtu.be/B1kf4bufF1o)
 ```markdown
 Syntax highlighted code block
 
