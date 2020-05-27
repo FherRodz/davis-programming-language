@@ -42,6 +42,6 @@ The language should be able to visualize different types of data structures.
 ## Videos
 > Demo Video | Commercial Video
 > ---------- | ----------------
-> [https://youtu.be/B1kf4bufF1o](https://youtu.be/B1kf4bufF1o) | [link here](https://youtu.be)
+> [https://youtu.be/B1kf4bufF1o](https://youtu.be/B1kf4bufF1o) | [https://youtu.be/ZECOBeNXHc8](https://youtu.be/ZECOBeNXHc8)
 
 
