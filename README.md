@@ -23,18 +23,18 @@ The language should be able to visualize different types of data structures.
 
 ## How to O.P.E.R.A.T.E 
 1. Write or modify the three DaVis functions on the "test.davis" file
-  1. Canvas
-    * dimensions => two integers determining the size of the canvas screen
-    * background color (bgColor) => one of **WHITE**, **BLACK**, **GREEN**, **YELLOW**, **RED**, **BLUE** 
-    * position => two integers determining where the canvas starts on your screen
-  1. Structure
-    * structure name (struc) => one of **arrayStructure**, **doublyLinkedList**, **queue**, **stack**
-    * data => an array with the integers in the structure
-  1. Draw
-    * penSize => an integer followed by the string "px"
-    * penColor => one of **WHITE**, **BLACK**, **GREEN**, **YELLOW**, **RED**, **BLUE**
-    * animation => boolean true or false
-    * AN OPTIONAL ARGUMENT BEING THE PREVIOUS STRCUTURE FUNCTION => the string "funcStructures"
+   1. Canvas
+     * dimensions => two integers determining the size of the canvas screen
+     * background color (bgColor) => one of **WHITE**, **BLACK**, **GREEN**, **YELLOW**, **RED**, **BLUE** 
+     * position => two integers determining where the canvas starts on your screen
+   1. Structure
+     * structure name (struc) => one of **arrayStructure**, **doublyLinkedList**, **queue**, **stack**
+     * data => an array with the integers in the structure
+   1. Draw
+     * penSize => an integer followed by the string "px"
+     * penColor => one of **WHITE**, **BLACK**, **GREEN**, **YELLOW**, **RED**, **BLUE**
+     * animation => boolean true or false
+     * AN OPTIONAL ARGUMENT BEING THE PREVIOUS STRCUTURE FUNCTION => the string "funcStructures"
 1. You need [python](https://www.python.org/downloads/) installed on your machine.
   * Open the terminal and go to the direction of the project
   * Run `python parser.py` on your temrinal 
