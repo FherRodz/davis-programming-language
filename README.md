@@ -3,12 +3,17 @@
 One of the biggest problems students face when taking advanced programming classes like data structures is the visualization of abstract structures. As a result, the students’ execution fails to demonstrate their knowledge or creates an unnecessary hurdle. The implementation of a simple programming language that would help in the visualization of the structures could be of great use. That's where DaVis comes in! Working around JFrame, it is an easy way to create models used by students or professors alike in the explanation, study or transformation of data structures like circular-singly-linked-list.
 
 ### The FEAT_ure.s
+The language should be able to visualize different types of data structures.
 
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
+1. Easy rendition of different Data Structures graphs with easy modification of ->
+   `=>` Dimensions
+   `=>` Color
+   `=>` Position
+1. The visualization should be done with only three functions -> 
+   `=>` Canvas
+   `=>` Structure
+   `=>` Draw
+
 
 ```markdown
 Syntax highlighted code block
