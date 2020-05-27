@@ -34,7 +34,7 @@ The language should be able to visualize different types of data structures.
      * penSize => an integer followed by the string "px"
      * penColor => one of **WHITE**, **BLACK**, **GREEN**, **YELLOW**, **RED**, **BLUE**
      * animation => boolean true or false
-     * AN OPTIONAL ARGUMENT BEING THE PREVIOUS STRCUTURE FUNCTION => the string "funcStructures"
+     * AN OPTIONAL ARGUMENT BEING THE PREVIOUS STRCUTURE FUNCTION => the string "`funcStructures`"
 1. You need [python](https://www.python.org/downloads/) installed on your machine.
   * Open the terminal and go to the directory of the project
   * Run `python parser.py` on your temrinal 
